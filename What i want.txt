@@ -1,0 +1,458 @@
+Design Principles
+Lots of whitespace
+2-3 colors maximum
+2 font family (Inter, Geist ya Satoshi)
+Thin borders instead of heavy shadows
+Smooth micro animations only
+No unnecessary gradients
+High quality typography
+
+Ab mujhe tumhara vision clear ho gaya hai. Aur honestly mujhe lagta hai tum **Sebastian + Juan Mora ko mix** nahi karna chahiye, balki **Sebastian ko base** rakhna chahiye aur sirf **Juan Mora ka folder interaction** lena chahiye.
+
+Jo folder screenshot tumne bheja hai, usme idea bohot unique hai: user ko lagta hai woh files browse kar raha hai, na ke sirf cards dekh raha hai. Ye interaction memorable hai, lekin baaki website minimal rehni chahiye.
+
+---
+
+# Design Philosophy
+
+## **Quiet. Confident. Intentional.**
+
+Website dekh kar aisa feel aaye:
+
+> "Ye designer apni skills ko shout nahi kar raha, uska kaam khud bol raha hai."
+
+Isliye har cheez ka purpose hoga.
+
+* No unnecessary gradients
+* No floating shapes
+* No glassmorphism
+* No random animations
+* No parallax overload
+* No hero video
+
+Bas clean typography, whitespace aur premium interactions.
+
+---
+
+# Overall Site Structure
+
+```
+────────────────────────────
+Fixed Navbar
+────────────────────────────
+
+Hero
+
+About
+
+Selected Work
+
+Contact
+```
+
+Sirf 4 sections.
+
+Bilkul Sebastian ki tarah.
+
+---
+
+# Navbar
+
+Bilkul Sebastian ki philosophy.
+
+```
+Zain.
+
+About
+
+Work
+
+Contact
+```
+
+### Rules
+
+✔ Fixed
+
+✔ Transparent initially
+
+✔ Scroll pe sirf halka blur
+
+✔ White background nahi
+
+✔ Shadow nahi
+
+✔ Hamburger nahi desktop pe
+
+Hover animation bhi bohot subtle.
+
+---
+
+# Hero
+
+Hero ko main bohot clean rakhunga.
+
+Left side
+
+```
+Crafting websites
+that businesses
+remember.
+```
+
+Neeche
+
+```
+Designer
+Developer
+Creative Thinker
+```
+
+Buttons
+
+```
+View Work
+
+Let's Talk
+```
+
+Right side
+
+Ek clean browser preview.
+
+Ya
+
+Ek project screenshot.
+
+NOT illustration.
+
+---
+
+# About
+
+Ek paragraph.
+
+Resume nahi.
+
+Story nahi.
+
+Bas positioning.
+
+Example
+
+> I design and develop thoughtful digital experiences focused on clarity, usability and performance.
+
+Bas.
+
+---
+
+# Work Section ⭐
+
+Yahan Juan Mora ka concept use hoga.
+
+Normal cards nahi.
+
+Instead
+
+```
+📁 Restaurant
+
+📁 SaaS
+
+📁 Portfolio
+
+📁 Branding
+```
+
+Folder cards.
+
+Hover
+
+Folder halka sa open.
+
+Click
+
+Folder open animation.
+
+Andar
+
+```
+Project 01
+
+Project 02
+
+Project 03
+```
+
+Gallery.
+
+Bilkul desktop explorer wali feeling.
+
+---
+
+# Folder Animation
+
+Imagine
+
+```
+Closed Folder
+
+↓
+
+click
+
+↓
+
+Folder lid opens
+
+↓
+
+Files slide upward
+
+↓
+
+Gallery appears
+
+↓
+
+Click image
+
+↓
+
+Project opens
+```
+
+Ye interaction tumhari website ki identity ban sakta hai.
+
+---
+
+# Project Page
+
+Har project ka page same structure.
+
+```
+Hero
+
+↓
+
+Problem
+
+↓
+
+Research
+
+↓
+
+Wireframe
+
+↓
+
+Final Design
+
+↓
+
+Result
+
+↓
+
+Next Project
+```
+
+Client ko sirf screenshot nahi dikhana.
+
+Process dikhana.
+
+---
+
+# Contact
+
+Large typography.
+
+```
+Have an idea?
+
+Let's build it.
+```
+
+Neeche
+
+Email
+
+WhatsApp
+
+LinkedIn
+
+Bas.
+
+---
+
+# Motion
+
+Animation sirf UX improve kare.
+
+Hero text
+
+```
+fade
+```
+
+Buttons
+
+```
+slide
+```
+
+Folders
+
+```
+open
+```
+
+Images
+
+```
+scale
+```
+
+Sections
+
+```
+fade up
+```
+
+Nothing more.
+
+---
+
+# Colors
+
+Background
+
+```
+#FAF8F5
+```
+
+Text
+
+```
+#111111
+```
+
+Grey
+
+```
+#7A7A7A
+```
+
+Accent
+
+```
+#0F766E
+```
+
+Bas.
+
+---
+
+# Typography
+
+Heading
+
+```
+General Sans
+```
+
+Body
+
+```
+Inter
+```
+
+Button
+
+```
+Inter Medium
+```
+
+---
+
+# Spacing
+
+Sabse important.
+
+Har section
+
+```
+160px
+```
+
+Desktop.
+
+Content width
+
+```
+1200px
+```
+
+Max.
+
+Images
+
+```
+24px radius
+```
+
+---
+
+# Website Feel
+
+Main chahta hoon jab koi client website open kare to uske dimaag me ye aaye:
+
+```
+Minimal
+
+↓
+
+Premium
+
+↓
+
+Professional
+
+↓
+
+Interesting
+
+↓
+
+Memorable
+```
+
+Aur sabse memorable cheez hogi **Work section ka folder experience**.
+
+---
+
+## 🔥 Meri ek aur suggestion (jo mujhe lagta hai website ko next level le jayegi)
+
+Work section me sirf folders mat rakho. Unhe **operating system style** feel do.
+
+```
+📁 Restaurants
+gallery + direction 
+    ├── Bella's Restaurant
+    ├── Bite Me
+    └── Pizza House
+
+📁 Business
+gallery + direction 
+    ├── Landing Page
+    ├── AI Studio
+    └── Dashboard
+
+📁 Personal
+gallery + direction 
+    ├── Portfolio
+    └── Branding
+```
+
+User jab folder khole to gallery appear ho, aur kisi project par click karte hi dedicated case study page khul jaye. Is tarah tumhara portfolio ek normal showcase nahi lagega, balki ek curated design archive jaisa feel dega—clean, memorable aur premium, bina unnecessary visual noise ke. Yehi tumhari website ki unique identity ban sakti hai.

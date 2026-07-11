@@ -52,20 +52,18 @@ export default function ParallaxBackground() {
 
   return (
     <>
-      <div className="bg-grid">
-        <div ref={lineLeftRef} className="bg-line-left" />
-        <div ref={lineRightRef} className="bg-line-right" />
-        <div ref={lineH1Ref} className="bg-line-h1" />
-        <div ref={lineH2Ref} className="bg-line-h2" />
-      </div>
+      {/* Premium Minimal Background Elements matching CSS tokens exactly */}
+      <div ref={lineLeftRef} className="bg-line bg-line-left" />
+      <div ref={lineRightRef} className="bg-line bg-line-right" />
+      <div ref={lineH1Ref} className="bg-line bg-line-horizontal bg-line-h1" />
+      <div ref={lineH2Ref} className="bg-line bg-line-horizontal bg-line-h2" />
 
-      <div className="blob-container">
-        <div className="blob-1-wrapper">
-          <div ref={blob1Ref} className="blob-1" />
-        </div>
-        <div className="blob-2-wrapper">
-          <div ref={blob2Ref} className="blob-2" />
-        </div>
+      {/* Animated Organic Blobs */}
+      <div ref={blob1Ref} className="bg-blob-container blob-1">
+        <div className="bg-blob" />
+      </div>
+      <div ref={blob2Ref} className="bg-blob-container blob-2">
+        <div className="bg-blob" />
       </div>
     </>
   );

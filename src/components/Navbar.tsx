@@ -53,14 +53,20 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
       <div className="nav-container">
-        <Link href="/" className="logo brand-bold">
-          {logoText.split('').map((char, index) => (
-            <span key={index} className="char-wrapper">
-              <span className="char-item">{char === ' ' ? '\u00A0' : char}</span>
-              <span className="char-hover">{char === ' ' ? '\u00A0' : char}</span>
+        <div className="logo-wrapper">
+          <span className="handwritten-intro">Hey, I'm</span>
+          <Link href="/" className="logo-brand">
+            <span className="brand-bold">
+              {"Muhammad Zain".split('').map((char, index) => (
+                <span key={index} className="char-wrapper">
+                  <span className="char-item">{char === ' ' ? '\u00A0' : char}</span>
+                  <span className="char-hover">{char === ' ' ? '\u00A0' : char}</span>
+                </span>
+              ))}
             </span>
-          ))}
-        </Link>
+            <span className="brand-light">Qureshi</span>
+          </Link>
+        </div>
         <div 
           ref={navLinksRef} 
           className="nav-links"

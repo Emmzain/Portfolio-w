@@ -292,14 +292,13 @@ img {
     z-index: 100;
     padding: 1rem 0;
     transition: all var(--transition-smooth);
-    background: transparent;
+    background: var(--bg);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .navbar.scrolled {
-    background: rgba(250, 248, 245, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     padding: 0.8rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
 .nav-container {

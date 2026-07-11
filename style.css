@@ -639,8 +639,7 @@ img {
     left: 0;
     width: 100%;
     height: 85%;
-    background-color: #EAE5DE;
-    /* Slightly darker than bg */
+    background-color: #E2DDD4; /* 5x lighter desaturated sand back */
     border-radius: var(--radius-sm);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -652,7 +651,7 @@ img {
     left: 0;
     width: 40%;
     height: 15%;
-    background-color: #EAE5DE;
+    background-color: #E2DDD4; /* 5x lighter desaturated sand tab */
     border-radius: var(--radius-sm) var(--radius-sm) 0 0;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: none;
@@ -700,10 +699,10 @@ img {
     left: 0;
     width: 100%;
     height: 85%;
-    background-color: var(--white);
+    background-color: #ECE8DF; /* 5x lighter desaturated sand front */
     border-radius: var(--radius-sm);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -715,7 +714,35 @@ img {
 }
 
 .folder-icon {
-    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.logo-crop-wrapper {
+    width: 230px; /* 5x larger width */
+    height: 160px; /* 5x larger crop height (keeps EMM ZAIN text hidden) */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Keep only the top 'EZ' logo */
+    position: relative;
+    transition: transform var(--transition-smooth);
+}
+
+.ez-folder-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: -webkit-optimize-contrast; /* Sharp rendering for PNG */
+    image-rendering: crisp-edges;
+    filter: drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.75)) 
+            drop-shadow(-1px -1px 0.5px rgba(17, 17, 17, 0.12)); /* Embossed pressed shadow style */
+}
+
+.folder:hover .logo-crop-wrapper {
+    transform: scale(1.08) rotate(-1.5deg);
 }
 
 .folder-name {

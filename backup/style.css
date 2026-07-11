@@ -659,29 +659,27 @@ img {
 
 .folder-content {
     position: absolute;
-    top: 25%;
-    left: 10%;
-    width: 80%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    z-index: 1;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all var(--transition-smooth);
+    top: 15%;
+    left: 8%;
+    width: 84%;
+    height: 75%;
+    z-index: 2; /* Behind folder-front (z-index 3) */
 }
 
 .file-item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 85%;
     background: var(--white);
     padding: 0.75rem 1rem;
     border-radius: 8px;
     font-size: 0.875rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transform: translateY(10px);
-    opacity: 0;
-    transition: all var(--transition-fast);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
 }
 
 .file-item a {
@@ -703,7 +701,7 @@ img {
     border-radius: var(--radius-sm);
     border: 1px solid rgba(0, 0, 0, 0.04);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -711,6 +709,11 @@ img {
     gap: 1rem;
     transform-origin: bottom center;
     transition: transform var(--transition-smooth);
+    
+    /* Hardware acceleration to keep rotated layers razor sharp */
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
 }
 
 .folder-icon {
@@ -721,28 +724,31 @@ img {
 }
 
 .logo-crop-wrapper {
-    width: 230px; /* 5x larger width */
-    height: 160px; /* 5x larger crop height (keeps EMM ZAIN text hidden) */
+    width: 230px; 
+    height: 160px; 
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Keep only the top 'EZ' logo */
+    align-items: flex-start;
     position: relative;
-    transition: transform var(--transition-smooth);
+    
+    /* Keep sub-pixel rendering crisp during parent rotation */
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 .ez-folder-logo {
     width: 100%;
     height: auto;
     display: block;
-    image-rendering: -webkit-optimize-contrast; /* Sharp rendering for PNG */
+    image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     filter: drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.75)) 
-            drop-shadow(-1px -1px 0.5px rgba(17, 17, 17, 0.12)); /* Embossed pressed shadow style */
-}
-
-.folder:hover .logo-crop-wrapper {
-    transform: scale(1.08) rotate(-1.5deg);
+            drop-shadow(-1px -1px 0.5px rgba(17, 17, 17, 0.12));
+            
+    /* Eliminate blur in 3D perspective space */
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 .folder-name {
@@ -751,37 +757,90 @@ img {
     font-size: 1.125rem;
 }
 
-/* Hover State - Partial Open */
+.folder-content {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    width: 84%;
+    height: 75%;
+    z-index: 2; /* Behind folder-front (z-index 3) */
+}
+
+.file-item {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: var(--white);
+    padding: 1.15rem 1rem 0.5rem 1rem; /* Padding adjusted to clear top label */
+    border-radius: 8px;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: flex-end; /* Push title to the bottom */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+}
+
+.file-item a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.file-item:hover {
+    color: var(--accent);
+}
+
+.file-tab-label {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 0.55rem; /* Tiny uppercase text */
+    font-weight: 700;
+    color: var(--text-muted);
+    opacity: 0.8;
+    letter-spacing: 0.06em;
+    pointer-events: none;
+}
+
+/* Default closed stacked offsets (exactly 2 cards) */
+.file-item:nth-child(1) {
+    transform: translateY(18px) rotate(-1deg);
+    z-index: 2;
+    border-top: 3.5px solid var(--accent); /* Teal accent top tab line */
+}
+
+.file-item:nth-child(2) {
+    transform: translateY(-16px) rotate(1.5deg); /* Peaks out clearly showing the tab label */
+    z-index: 1;
+    border-top: 3.5px solid var(--grey); /* Grey top tab line */
+    background: #FAF9F6;
+}
+
+/* Hover & Open States - Fan-out Rise animation for 2 cards */
+.folder:hover .file-item:nth-child(1),
+.folder.open .file-item:nth-child(1) {
+    transform: translateY(-28px) rotate(-1.5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.folder:hover .file-item:nth-child(2),
+.folder.open .file-item:nth-child(2) {
+    transform: translateY(-64px) rotate(1.5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover State - Subtle Front Tilt */
 .folder:hover .folder-front,
 .folder:focus .folder-front {
-    transform: rotateX(-15deg);
+    transform: rotateX(-12deg);
 }
 
 /* Active State - Fully Open */
 .folder.open .folder-front {
-    transform: rotateX(-60deg);
-}
-
-.folder.open .folder-content {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.folder.open .file-item {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.folder.open .file-item:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.folder.open .file-item:nth-child(2) {
-    transition-delay: 0.3s;
-}
-
-.folder.open .file-item:nth-child(3) {
-    transition-delay: 0.4s;
+    transform: rotateX(-15deg);
 }
 
 /* =========================================

@@ -79,9 +79,6 @@ export default function Navbar() {
           <Link href="/#work" className="nav-item" onMouseEnter={handleMouseEnter}>
             Work
           </Link>
-          <a href="/Muhammad_Zain_Qureshi Vercel.pdf" target="_blank" rel="noopener noreferrer" className="nav-item" onMouseEnter={handleMouseEnter}>
-            CV
-          </a>
           <Link href="/#contact" className="nav-item" onMouseEnter={handleMouseEnter}>
             Contact
           </Link>

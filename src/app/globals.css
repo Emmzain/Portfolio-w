@@ -1281,7 +1281,7 @@ img {
    ========================================= */
 @media (max-width: 768px) {
     :root {
-        --spacing-section: 100px;
+        --spacing-section: 150px;
     }
 
     .hero-container {
@@ -1444,6 +1444,10 @@ img {
     .mob-social-link-icon:hover {
         color: var(--accent);
         transform: translateY(-2px);
+    }
+
+    .contact-section {
+        padding-top: 3rem !important; /* Elevate contact headline to the top space */
     }
 
     .contact-container {

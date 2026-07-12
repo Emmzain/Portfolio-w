@@ -1474,26 +1474,28 @@ img {
     }
 
     .contact-links {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
         width: 100%;
-        max-width: 360px;
-        margin: 6rem auto 0 auto !important; /* Force a strong gap between heading and buttons */
+        max-width: 320px;
+        margin: 6rem auto 0 auto !important;
     }
 
     .contact-link {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
+        justify-content: flex-start;
+        gap: 0.75rem;
         width: 100%;
-        padding: 0.85rem 0.5rem;
-        font-size: 0.9rem;
-        border-radius: 100px;
+        min-height: 52px; /* Minimum touch target size (WCAG) */
+        padding: 0.85rem 1.25rem;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 12px; /* Rounded rect — more modern than pill on mobile */
         box-sizing: border-box;
-        text-align: center;
         white-space: nowrap;
+        letter-spacing: -0.01em;
     }
 
     .floating-sidebar {

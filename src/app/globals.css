@@ -598,7 +598,7 @@ img {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 5.5rem;
+    padding-top: 0.3rem;
 }
 
 .hero-container {
@@ -666,7 +666,7 @@ img {
     width: 100%;
     height: 1px;
     background-color: rgba(17, 17, 17, 0.1);
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-actions {

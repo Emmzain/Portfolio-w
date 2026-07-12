@@ -1452,12 +1452,26 @@ img {
     }
 
     .contact-links {
-        flex-direction: column;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
     }
 
     .contact-link {
-        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0.85rem 0.5rem;
+        font-size: 0.9rem;
+        border-radius: 100px;
+        box-sizing: border-box;
+        text-align: center;
+        white-space: nowrap;
     }
 
     .floating-sidebar {

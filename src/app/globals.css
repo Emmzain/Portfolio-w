@@ -1288,8 +1288,27 @@ img {
         grid-template-columns: 1fr;
     }
 
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-line {
+        margin: 0 auto 2.5rem auto;
+    }
+
     .hero-visual {
         display: none !important; /* Hide 3D Canvas on mobile */
+    }
+
+    /* Hide background elements on mobile */
+    .vector-parallax-layer,
+    .bg-line,
+    .ambient-glow-layer {
+        display: none !important;
     }
 
     /* Hide desktop nav elements */

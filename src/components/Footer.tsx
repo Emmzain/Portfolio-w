@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="social-links">
           <a href="https://github.com/Emmzain" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:contact@example.com">Email</a>
+          <a href="mailto:emmzain222@gmail.com">Email</a>
         </div>
       </div>
     </footer>

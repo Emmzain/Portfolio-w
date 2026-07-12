@@ -13,202 +13,195 @@ export default function ParallaxBackground() {
   const ambientGlowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    
-    // Mouse Parallax Animation for Grid Elements (Desktop only)
+    // Mouse Parallax Animation for Grid Elements
+    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const ease = 0.08;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
     let animationFrameId: number;
-    let handleMouseMove: (e: MouseEvent) => void;
 
-    if (!isMobile) {
-      let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-      let current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-      const ease = 0.08;
+    function animate() {
+      current.x += (mouse.x - current.x) * ease;
+      current.y += (mouse.y - current.y) * ease;
 
-      handleMouseMove = (e: MouseEvent) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-      };
+      const offsetX = (current.x - window.innerWidth / 2) * 0.02;
+      const offsetY = (current.y - window.innerHeight / 2) * 0.02;
 
-      window.addEventListener('mousemove', handleMouseMove);
+      if (lineH1Ref.current) lineH1Ref.current.style.transform = `translateY(${offsetY}px)`;
+      if (lineH2Ref.current) lineH2Ref.current.style.transform = `translateY(${offsetY}px)`;
 
-      function animate() {
-        current.x += (mouse.x - current.x) * ease;
-        current.y += (mouse.y - current.y) * ease;
-
-        const offsetX = (current.x - window.innerWidth / 2) * 0.02;
-        const offsetY = (current.y - window.innerHeight / 2) * 0.02;
-
-        if (lineH1Ref.current) lineH1Ref.current.style.transform = `translateY(${offsetY}px)`;
-        if (lineH2Ref.current) lineH2Ref.current.style.transform = `translateY(${offsetY}px)`;
-
-        if (vectorContainerRef.current) {
-          vectorContainerRef.current.style.transform = `translate(${-offsetX * 1.2}px, ${-offsetY * 1.2}px)`;
-        }
-
-        if (ambientGlowRef.current) {
-          ambientGlowRef.current.style.transform = `translate(${offsetX * 0.8}px, ${offsetY * 0.8}px)`;
-        }
-
-        animationFrameId = requestAnimationFrame(animate);
+      if (vectorContainerRef.current) {
+        vectorContainerRef.current.style.transform = `translate(${-offsetX * 1.2}px, ${-offsetY * 1.2}px)`;
       }
 
-      animate();
+      if (ambientGlowRef.current) {
+        ambientGlowRef.current.style.transform = `translate(${offsetX * 0.8}px, ${offsetY * 0.8}px)`;
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
     }
+
+    animate();
 
     // GSAP ScrollTrigger Animations
     const ctx = gsap.context(() => {
-      // 1. Slow Grid Scroll Parallax (Layer 2 - Grid, Speed: 15%) - Desktop only
-      if (!isMobile) {
-        gsap.to('.blueprint-grid', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: true,
-          },
-          y: '-10%',
-          ease: 'none',
-        });
+      // 1. Slow Grid Scroll Parallax (Layer 2 - Grid, Speed: 15%)
+      gsap.to('.blueprint-grid', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+        y: '-10%',
+        ease: 'none',
+      });
 
-        // 2. Ambient Blobs Scroll Parallax (Layer 3 - Glow, Speed: 30%)
-        gsap.to('.ambient-glow-layer', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: true,
-          },
-          y: '-20%',
-          ease: 'none',
-        });
+      // 2. Ambient Blobs Scroll Parallax (Layer 3 - Glow, Speed: 30%)
+      gsap.to('.ambient-glow-layer', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+        y: '-20%',
+        ease: 'none',
+      });
 
-        // 3. Wireframes Scroll Parallax (Layer 4 - Objects, Speed: 60%)
-        gsap.to('.vector-parallax-layer', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: true,
-          },
-          y: -300, // Gentle upward shift over the entire page height
-          ease: 'none',
-        });
+      // 3. Wireframes Scroll Parallax (Layer 4 - Objects, Speed: 60%)
+      gsap.to('.vector-parallax-layer', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+        y: -300, // Gentle upward shift over the entire page height
+        ease: 'none',
+      });
 
-        // Staggered assets animation (All Cubes on scroll - start left, drift right)
-        gsap.to('[class*="vector-cube"]', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.5,
-          },
-          y: 220,
-          x: '12vw',
-          rotationX: 180,
-          rotationY: 90,
-          ease: 'none',
-        });
+      // Staggered assets animation (All Cubes on scroll - start left, drift right)
+      gsap.to('[class*="vector-cube"]', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1.5,
+        },
+        y: 220,
+        x: '12vw',
+        rotationX: 180,
+        rotationY: 90,
+        ease: 'none',
+      });
 
-        // Animate all wireframe browser window cards on scroll (start right, drift left)
-        gsap.to('[class*="vector-browser"]', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 2,
-          },
-          y: -180,
-          x: '-12vw',
-          rotation: -30,
-          scale: 0.95,
-          ease: 'none',
-        });
+      // Animate all wireframe browser window cards on scroll (start right, drift left)
+      gsap.to('[class*="vector-browser"]', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 2,
+        },
+        y: -180,
+        x: '-12vw',
+        rotation: -30,
+        scale: 0.95,
+        ease: 'none',
+      });
 
-        // Animate floating braces 1 & 3 (start right, drift left)
-        gsap.to('.vector-braces-1, .vector-braces-3', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.2,
-          },
-          y: -150,
-          x: '-14vw',
-          rotation: -45,
-          scale: 1.15,
-          ease: 'none',
-        });
+      // Animate floating braces 1 & 3 (start right, drift left)
+      gsap.to('.vector-braces-1, .vector-braces-3', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1.2,
+        },
+        y: -150,
+        x: '-14vw',
+        rotation: -45,
+        scale: 1.15,
+        ease: 'none',
+      });
 
-        // Animate floating braces 2 (starts left, drifts right)
-        gsap.to('.vector-braces-2', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.2,
-          },
-          y: -150,
-          x: '14vw',
-          rotation: 45,
-          scale: 1.15,
-          ease: 'none',
-        });
+      // Animate floating braces 2 (starts left, drifts right)
+      gsap.to('.vector-braces-2', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1.2,
+        },
+        y: -150,
+        x: '14vw',
+        rotation: 45,
+        scale: 1.15,
+        ease: 'none',
+      });
 
-        // Animate designer crosshairs 1 & 3 (start left, drift right)
-        gsap.to('.vector-crosshair-1, .vector-crosshair-3', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.4,
-          },
-          y: 180,
-          x: '15vw',
-          rotation: 90,
-          scale: 1.1,
-          ease: 'none',
-        });
+      // Animate designer crosshairs 1 & 3 (start left, drift right)
+      gsap.to('.vector-crosshair-1, .vector-crosshair-3', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1.4,
+        },
+        y: 180,
+        x: '15vw',
+        rotation: 90,
+        scale: 1.1,
+        ease: 'none',
+      });
 
-        // Animate designer crosshair 2 (starts right, drifts left)
-        gsap.to('.vector-crosshair-2', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.4,
-          },
-          y: 180,
-          x: '-15vw',
-          rotation: -90,
-          scale: 1.1,
-          ease: 'none',
-        });
+      // Animate designer crosshair 2 (starts right, drifts left)
+      gsap.to('.vector-crosshair-2', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1.4,
+        },
+        y: 180,
+        x: '-15vw',
+        rotation: -90,
+        scale: 1.1,
+        ease: 'none',
+      });
 
-        // Shift horizontal lines horizontally on scroll
-        gsap.to('.bg-line-h1', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1,
-          },
-          xPercent: 30,
-          ease: 'none',
-        });
+      // Shift horizontal lines horizontally on scroll
+      gsap.to('.bg-line-h1', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+        xPercent: 30,
+        ease: 'none',
+      });
 
-        gsap.to('.bg-line-h2', {
-          scrollTrigger: {
-            trigger: 'body',
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1,
-          },
-          xPercent: -30,
-          ease: 'none',
-        });
-      }
+      gsap.to('.bg-line-h2', {
+        scrollTrigger: {
+          trigger: 'body',
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+        xPercent: -30,
+        ease: 'none',
+      });
 
-      // Staggered reveal for section titles and elements (Active on both desktop & mobile)
+      // Staggered reveal for section titles and elements
       gsap.utils.toArray('.section-title').forEach((title: any) => {
         gsap.fromTo(title,
           { opacity: 0, y: 40 },
@@ -247,12 +240,8 @@ export default function ParallaxBackground() {
     });
 
     return () => {
-      if (!isMobile && handleMouseMove) {
-        window.removeEventListener('mousemove', handleMouseMove);
-      }
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
       ctx.revert();
     };
   }, []);

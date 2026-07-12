@@ -90,43 +90,23 @@ export default function Home() {
       delay: 0.1,
     });
 
-    const isMobile = window.innerWidth <= 768;
-
-    // Scroll-driven text character paint highlight reveal - Desktop only (Pin causes lag/jumping on mobile)
-    if (!isMobile) {
-      gsap.fromTo(aboutText.chars, 
-        { color: 'rgba(17, 17, 17, 0.12)' },
-        {
-          color: 'var(--text)',
-          stagger: 0.05,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '#about',
-            start: 'top top',
-            end: '+=150%',
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1,
-          }
+    // Scroll-driven text character paint highlight reveal with section pinning
+    gsap.fromTo(aboutText.chars, 
+      { color: 'rgba(17, 17, 17, 0.12)' },
+      {
+        color: 'var(--text)',
+        stagger: 0.05,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#about',
+          start: 'top top',
+          end: '+=150%',
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
         }
-      );
-    } else {
-      // Light-weight scroll reveal on mobile without pinning/anticipatePin
-      gsap.fromTo(aboutText.chars,
-        { color: 'rgba(17, 17, 17, 0.12)' },
-        {
-          color: 'var(--text)',
-          stagger: 0.015,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '#about',
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: 1,
-          }
-        }
-      );
-    }
+      }
+    );
 
     // Scroll reveal animation for Contact Title words rising
     gsap.from(contactTitle.words, {
@@ -141,21 +121,19 @@ export default function Home() {
       }
     });
 
-    // Parallax expand + fade out hero mock browser on scroll - Desktop only
-    if (!isMobile) {
-      gsap.to('.browser-preview', {
-        scrollTrigger: {
-          trigger: '#hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-        },
-        scale: 1.15,
-        y: -80,
-        opacity: 0.1,
-        ease: 'none',
-      });
-    }
+    // Parallax expand + fade out hero mock browser on scroll
+    gsap.to('.browser-preview', {
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+      },
+      scale: 1.15,
+      y: -80,
+      opacity: 0.1,
+      ease: 'none',
+    });
 
     // Scroll reveal animation observer
     const observer = new IntersectionObserver((entries) => {

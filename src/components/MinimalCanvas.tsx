@@ -12,7 +12,6 @@ export default function MinimalCanvas() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    if (window.innerWidth <= 768) return; // Disable WebGL on mobile to prevent performance lag
 
     // Use parent container bounding box for correct height/width allocation (avoids any layout cutting)
     const rect = containerRef.current.getBoundingClientRect();

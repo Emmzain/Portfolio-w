@@ -1479,7 +1479,7 @@ img {
         gap: 0.75rem;
         width: 100%;
         max-width: 360px;
-        margin: 0 auto;
+        margin: 6rem auto 0 auto !important; /* Force a strong gap between heading and buttons */
     }
 
     .contact-link {

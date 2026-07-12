@@ -17,6 +17,7 @@ export default function Navbar() {
 
   const navLinksRef = useRef<HTMLDivElement | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isContactVisible, setIsContactVisible] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(prev => !prev);
@@ -33,6 +34,19 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Hide navbar on mobile when contact section is visible
+  useEffect(() => {
+    if (window.innerWidth > 768) return;
+    const contactEl = document.querySelector('#contact');
+    if (!contactEl) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsContactVisible(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(contactEl);
+    return () => observer.disconnect();
   }, []);
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -61,7 +75,7 @@ export default function Navbar() {
   
   return (
     <>
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isContactVisible ? 'nav-hidden-mobile' : ''}`} id="navbar">
         <div className="nav-container">
         <div className="logo-wrapper">
           <span className="handwritten-intro">Hey, I'm</span>

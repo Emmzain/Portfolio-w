@@ -1442,7 +1442,7 @@ img {
     }
 
     .floating-sidebar {
-        display: none;
+        display: none !important;
     }
 }
 

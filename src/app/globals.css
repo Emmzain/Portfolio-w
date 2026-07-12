@@ -1281,7 +1281,7 @@ img {
    ========================================= */
 @media (max-width: 768px) {
     :root {
-        --spacing-section: 100px;
+        --spacing-section: 150px;
     }
 
     .hero-container {
@@ -1446,9 +1446,31 @@ img {
         transform: translateY(-2px);
     }
 
+    .contact-section {
+        min-height: 90vh; /* Fills screen height so only this section is visible at the end */
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 3.5rem !important; /* Move headline up near navbar in the red box area */
+        padding-bottom: 2rem !important;
+        margin-top: 0 !important;
+        box-sizing: border-box;
+    }
+
     .contact-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 2.5rem;
+    }
+
+    .contact-title {
+        text-align: center;
+        margin: 0 !important;
+        font-size: clamp(2.4rem, 9vw, 3rem) !important;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
     }
 
     .contact-links {

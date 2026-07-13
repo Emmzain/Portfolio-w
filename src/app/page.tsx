@@ -100,7 +100,7 @@ export default function Home() {
       delay: 0.1,
     });
 
-    // Scroll-driven text word paint highlight reveal (no pinning to avoid sticky overlapping glitches)
+    // Scroll-driven text word paint highlight reveal with section pinning
     gsap.fromTo(aboutText.words, 
       { color: 'rgba(17, 17, 17, 0.15)' },
       {
@@ -109,9 +109,11 @@ export default function Home() {
         ease: 'none',
         scrollTrigger: {
           trigger: '#about',
-          start: 'top 80%',
-          end: 'bottom 40%',
+          start: 'top top',
+          end: '+=150%',
           scrub: 0.5,
+          pin: true,
+          anticipatePin: 1,
         }
       }
     );

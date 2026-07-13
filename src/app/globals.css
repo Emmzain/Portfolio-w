@@ -703,6 +703,15 @@ img {
     display: flex;
     justify-content: center;
     text-align: center;
+    background-color: var(--bg);
+    position: relative;
+    z-index: 10;
+}
+
+#services {
+    position: relative;
+    z-index: 11;
+    background-color: var(--bg);
 }
 
 .about-text {

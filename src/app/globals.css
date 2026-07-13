@@ -1749,11 +1749,11 @@ img {
     top: 50%;
     left: 50%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Expanded to 6 columns */
-    grid-template-rows: repeat(6, 1fr);    /* Expanded to 6 rows */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for 9 unique items */
+    grid-template-rows: repeat(3, 1fr);    /* 3 rows for 9 unique items */
     gap: 0px; /* Zero gap between pictures */
-    width: 250vw;
-    height: 250vh;
+    width: 140vw;
+    height: 140vh;
     transform: translate(-50%, -50%) rotate(45deg);
 }
 

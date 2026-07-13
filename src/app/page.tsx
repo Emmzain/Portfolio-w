@@ -284,53 +284,15 @@ export default function Home() {
         {/* Services Gallery Section (Full-bleed Diamond Grid with 0 Gap) */}
         <section id="services-gallery">
           <div className="diamond-grid">
-            {/* Row 1 */}
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
-
-            {/* Row 2 (Secondary priority & transition to center) */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
-
-            {/* Row 3 (Top priority 1-5 in Center) */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/9.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/4.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
-
-            {/* Row 4 (Top priority 1-5 in Center) */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/4.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/4.png')" }}></div></div>
-
-            {/* Row 5 (Secondary priority & transition to border) */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
-
-            {/* Row 6 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/10.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/13.png')" }}></div></div>
           </div>
         </section>
 

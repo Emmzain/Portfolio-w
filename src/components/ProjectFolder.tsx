@@ -51,7 +51,7 @@ export default function ProjectFolder({ folderId, files, isOpen, onToggle }: Pro
         <div className="folder-front">
           <div className="folder-icon">
             <div className="logo-crop-wrapper">
-              <img src="/Logo.png" className="ez-folder-logo" alt="EZ Logo" />
+              <img src="/Logo.webp" className="ez-folder-logo" alt="EZ Logo" />
             </div>
           </div>
         </div>

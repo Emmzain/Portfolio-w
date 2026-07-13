@@ -163,22 +163,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             </div>
           </div>
           
-          <div className="project-meta" style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap', borderTop: '1px solid rgba(17,17,17,0.08)', paddingTop: '1.5rem', marginBottom: '3rem' }}>
-            <div className="meta-item" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em' }}>Client</span>
-              <span style={{ fontSize: '1.05rem', fontWeight: 500 }}>{project.client}</span>
-            </div>
-            <div className="meta-item" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em' }}>Role</span>
-              <span style={{ fontSize: '1.05rem', fontWeight: 500 }}>{project.role}</span>
-            </div>
-            <div className="meta-item" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em' }}>Year</span>
-              <span style={{ fontSize: '1.05rem', fontWeight: 500 }}>{project.year}</span>
-            </div>
-            <div className="meta-item" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-              <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em' }}>Tech Stack</span>
-              <span style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--accent)' }}>{project.techStack}</span>
+          <div className="project-meta" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', borderTop: '1px solid rgba(17,17,17,0.08)', paddingTop: '1.5rem', marginBottom: '3rem' }}>
+            <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Tech Stack</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
+              {project.techStack.split(',').map((tech) => (
+                <span key={tech} className="card-tag" style={{ fontSize: '0.85rem', padding: '0.4rem 1.1rem', textTransform: 'none', fontWeight: 500 }}>
+                  {tech.trim()}
+                </span>
+              ))}
             </div>
           </div>
         </div>

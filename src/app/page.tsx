@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import ParallaxBackground from '@/components/ParallaxBackground';
 import ProjectFolder from '@/components/ProjectFolder';
 import MinimalCanvas from '@/components/MinimalCanvas';
@@ -38,6 +39,7 @@ const galleryData: GalleryData = {
 };
 
 export default function Home() {
+  const router = useRouter();
   const [openFolder, setOpenFolder] = useState<string | null>(null);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
@@ -177,16 +179,11 @@ export default function Home() {
   }, []);
 
   const handleFolderToggle = (folderId: string) => {
-    if (openFolder === folderId) {
-      setOpenFolder(null);
-      setIsGalleryOpen(false);
-    } else {
-      setOpenFolder(folderId);
-      // Wait for folder lid rotation animation to complete before fanning open gallery
-      setTimeout(() => {
-        setIsGalleryOpen(true);
-      }, 750);
-    }
+    setOpenFolder(folderId);
+    // Animate opening state briefly then redirect to /work page
+    setTimeout(() => {
+      router.push('/work');
+    }, 450);
   };
 
   const handleCloseGallery = () => {
@@ -347,34 +344,13 @@ export default function Home() {
           <div className="container">
             <h2 className="section-title fade-up">Selected Work</h2>
             
-            <div className="folders-grid">
+            <div className="folders-grid" style={{ display: 'flex', justifyContent: 'center' }}>
               <ProjectFolder 
-                folderId="restaurants"
-                isOpen={openFolder === 'restaurants'}
-                onToggle={() => handleFolderToggle('restaurants')}
+                folderId="all-projects"
+                isOpen={openFolder === 'all-projects'}
+                onToggle={() => handleFolderToggle('all-projects')}
                 files={[
-                  { id: 'bella', title: "Bella's Restaurant", tabLabel: "CASE STUDY" },
-                  { id: 'pizza', title: "Pizza House", tabLabel: "02 / DESIGN" }
-                ]}
-              />
-
-              <ProjectFolder 
-                folderId="business"
-                isOpen={openFolder === 'business'}
-                onToggle={() => handleFolderToggle('business')}
-                files={[
-                  { id: 'landing', title: "SaaS Landing Page", tabLabel: "CASE STUDY" },
-                  { id: 'ai', title: "AI Studio", tabLabel: "02 / INTERACTION" }
-                ]}
-              />
-
-              <ProjectFolder 
-                folderId="personal"
-                isOpen={openFolder === 'personal'}
-                onToggle={() => handleFolderToggle('personal')}
-                files={[
-                  { id: 'portfolio', title: "Previous Portfolio", tabLabel: "PORTFOLIO" },
-                  { id: 'branding', title: "Personal Branding", tabLabel: "02 / DESIGN" }
+                  { id: 'work', title: "Explore All Projects", tabLabel: "PORTFOLIO" }
                 ]}
               />
             </div>

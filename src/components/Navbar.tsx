@@ -102,7 +102,7 @@ export default function Navbar() {
           <Link href="/#about" className="nav-item" onMouseEnter={handleMouseEnter}>
             About
           </Link>
-          <Link href="/#work" className="nav-item" onMouseEnter={handleMouseEnter}>
+          <Link href="/work" className="nav-item" onMouseEnter={handleMouseEnter}>
             Work
           </Link>
           <Link href="/#contact" className="nav-item" onMouseEnter={handleMouseEnter}>
@@ -139,7 +139,7 @@ export default function Navbar() {
         <Link href="/#about" className="mob-nav-item" onClick={closeMobileMenu}>
           About
         </Link>
-        <Link href="/#work" className="mob-nav-item" onClick={closeMobileMenu}>
+        <Link href="/work" className="mob-nav-item" onClick={closeMobileMenu}>
           Work
         </Link>
         <Link href="/#contact" className="mob-nav-item" onClick={closeMobileMenu}>

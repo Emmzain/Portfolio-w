@@ -41,7 +41,7 @@ export default function ProjectFolder({ folderId, files, isOpen, onToggle }: Pro
           {files.map((file, index) => (
             <div key={file.id} className="file-item">
               <span className="file-tab-label">{file.tabLabel}</span>
-              <Link href={`/project/${file.id}`}>
+              <Link href={file.id === 'work' ? '/work' : `/project/${file.id}`}>
                 {file.title}
               </Link>
             </div>

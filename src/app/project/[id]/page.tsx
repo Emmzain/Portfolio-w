@@ -142,7 +142,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       <section className="section project-hero" style={{ paddingTop: '120px' }}>
         <div className="container fade-up visible">
           <span className="project-category" style={{ display: 'block', fontSize: '0.9rem', color: 'var(--accent)', fontWeight: 600, marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{project.category}</span>
-          <h1 className="project-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 500, letterSpacing: '-0.02em', marginBottom: '2.5rem' }}>{project.title}</h1>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem', marginBottom: '2.5rem' }}>
+            <h1 className="project-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 500, letterSpacing: '-0.02em', margin: 0 }}>{project.title}</h1>
+            
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.65rem 1.5rem', fontSize: '0.9rem', borderRadius: '100px' }}>
+                Live Project
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '6px' }}>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.65rem 1.5rem', fontSize: '0.9rem', borderRadius: '100px' }}>
+                GitHub
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style={{ marginLeft: '6px' }}>
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+                </svg>
+              </a>
+            </div>
+          </div>
           
           <div className="project-meta" style={{ display: 'flex', gap: '4rem', flexWrap: 'wrap', borderTop: '1px solid rgba(17,17,17,0.08)', paddingTop: '1.5rem', marginBottom: '3rem' }}>
             <div className="meta-item" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
@@ -161,23 +180,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
               <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em' }}>Tech Stack</span>
               <span style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--accent)' }}>{project.techStack}</span>
             </div>
-          </div>
-
-          <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '3.5rem' }}>
-            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.8rem 2rem' }}>
-              Live Project
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '8px' }}>
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.8rem 2rem' }}>
-              GitHub Repo
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginLeft: '8px' }}>
-                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
-              </svg>
-            </a>
           </div>
         </div>
         

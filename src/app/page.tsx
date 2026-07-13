@@ -237,18 +237,44 @@ export default function Home() {
                 <div className="service-card">
                   <h3>UX/UI Design</h3>
                   <p>User-centered layouts, mockups, and interactive prototypes built for ultimate conversion.</p>
+                  <div className="card-tags">
+                    <span className="card-tag">Antigravity</span>
+                    <span className="card-tag">UX Research</span>
+                    <span className="card-tag">Wireframes</span>
+                    <span className="card-tag">Prototypes</span>
+                  </div>
                 </div>
                 <div className="service-card">
                   <h3>Web Development</h3>
                   <p>Modern, responsive, fast-loading React and Next.js applications styled with CSS/Tailwind.</p>
+                  <div className="card-tags">
+                    <span className="card-tag">HTML5</span>
+                    <span className="card-tag">CSS3</span>
+                    <span className="card-tag">JavaScript</span>
+                    <span className="card-tag">React</span>
+                    <span className="card-tag">Next.js</span>
+                    <span className="card-tag">Tailwind</span>
+                  </div>
                 </div>
                 <div className="service-card">
                   <h3>Brand Strategy</h3>
                   <p>Developing unique visual identities, logo marks, and visual systems for modern companies.</p>
+                  <div className="card-tags">
+                    <span className="card-tag">Logo Design</span>
+                    <span className="card-tag">Identity</span>
+                    <span className="card-tag">Typography</span>
+                    <span className="card-tag">Styleguides</span>
+                  </div>
                 </div>
                 <div className="service-card">
                   <h3>Performance & SEO</h3>
                   <p>Ensuring high Lighthouse scores, search rankings, and fast loading speeds out of the box.</p>
+                  <div className="card-tags">
+                    <span className="card-tag">PageSpeed</span>
+                    <span className="card-tag">SEO</span>
+                    <span className="card-tag">Analytics</span>
+                    <span className="card-tag">Optimization</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -259,52 +285,52 @@ export default function Home() {
         <section id="services-gallery">
           <div className="diamond-grid">
             {/* Row 1 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/desimehfil.vercel.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/shelf Stash web.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Luxin Parlort.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1lumierebeautyui.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Landing pagexl.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
 
-            {/* Row 2 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Patch Ai p.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Shelf Stash webp.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/app2ult.html.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/appault.html.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme-pi.vercel.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/ddesimehfil.vercel.app.png')" }}></div></div>
+            {/* Row 2 (Secondary priority & transition to center) */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
 
-            {/* Row 3 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/dwesi mehfil.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/emmzain.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/lumierebeautyui.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/mierebeautyui.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/patch ai app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/patch ai logapp.png')" }}></div></div>
+            {/* Row 3 (Top priority 1-5 in Center) */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/4.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
 
-            {/* Row 4 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/zain.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/desimehfil.vercel.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/shelf Stash web.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Luxin Parlort.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1lumierebeautyui.netlify.app.png')" }}></div></div>
+            {/* Row 4 (Top priority 1-5 in Center) */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/4.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/4.png')" }}></div></div>
 
-            {/* Row 5 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Landing pagexl.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Patch Ai p.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Shelf Stash webp.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/app2ult.html.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/appault.html.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme-pi.vercel.app.png')" }}></div></div>
+            {/* Row 5 (Secondary priority & transition to border) */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/5.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
 
             {/* Row 6 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/ddesimehfil.vercel.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/dwesi mehfil.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/emmzain.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/lumierebeautyui.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/mierebeautyui.netlify.app.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/zain.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
           </div>
         </section>
 

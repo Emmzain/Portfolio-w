@@ -1292,13 +1292,25 @@ img {
     }
 
     #services {
-        padding-bottom: 10px !important;
+        padding-bottom: 20px !important;
     }
 
     #services-gallery {
-        height: 35vh !important;
-        min-height: 280px !important;
-        margin-top: -20px !important;
+        background-image: url('/projects/1999.webp') !important;
+        background-position: center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        height: 50vh !important;
+        min-height: 320px !important;
+        margin-top: 40px !important; /* Gap between hover cards and picture */
+        border-radius: var(--radius-sm);
+        width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    #services-gallery .diamond-grid {
+        display: none !important;
     }
 
     .hero-container {

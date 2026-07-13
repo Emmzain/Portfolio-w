@@ -52,83 +52,90 @@ export default function Home() {
       return;
     }
 
-    // SplitType animations for Hero Title, Subtitle, About Text and Contact Title
-    const heroTitle = new SplitType('.hero-title', { types: 'lines,words' });
-    const heroSubTitle = new SplitType('.hero-sub-title', { types: 'words' });
-    const aboutText = new SplitType('.about-text', { types: 'words,chars' });
-    const contactTitle = new SplitType('.contact-title', { types: 'words,chars' });
+    let heroTitle: SplitType;
+    let heroSubTitle: SplitType;
+    let aboutText: SplitType;
+    let contactTitle: SplitType;
 
-    // Wrap contact title words in overflow hidden containers
-    contactTitle.words?.forEach(word => {
-      const wrapper = document.createElement('span');
-      wrapper.className = 'word-wrapper';
-      word.parentNode?.insertBefore(wrapper, word);
-      wrapper.appendChild(word);
-    });
+    document.fonts.ready.then(() => {
+      // SplitType animations for Hero Title, Subtitle, About Text and Contact Title
+      heroTitle = new SplitType('.hero-title', { types: 'lines,words' });
+      heroSubTitle = new SplitType('.hero-sub-title', { types: 'words' });
+      aboutText = new SplitType('.about-text', { types: 'words' });
+      contactTitle = new SplitType('.contact-title', { types: 'words' });
 
-    // Wrap hero title lines in overflow hidden containers for clean masking
-    heroTitle.lines?.forEach(line => {
-      const wrapper = document.createElement('div');
-      wrapper.className = 'line-wrapper';
-      line.parentNode?.insertBefore(wrapper, line);
-      wrapper.appendChild(line);
-    });
+      // Wrap contact title words in overflow hidden containers
+      contactTitle.words?.forEach(word => {
+        const wrapper = document.createElement('span');
+        wrapper.className = 'word-wrapper';
+        word.parentNode?.insertBefore(wrapper, word);
+        wrapper.appendChild(word);
+      });
 
-    // Wrap hero subtitle words in inline-block overflow wrappers
-    heroSubTitle.words?.forEach(word => {
-      const wrapper = document.createElement('span');
-      wrapper.className = 'word-wrapper';
-      word.parentNode?.insertBefore(wrapper, word);
-      wrapper.appendChild(word);
-    });
+      // Wrap hero title lines in overflow hidden containers for clean masking
+      heroTitle.lines?.forEach(line => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'line-wrapper';
+        line.parentNode?.insertBefore(wrapper, line);
+        wrapper.appendChild(line);
+      });
 
-    // Animate hero title words rising from mask
-    gsap.from(heroTitle.words, {
-      yPercent: 100,
-      stagger: 0.02,
-      duration: 1.4,
-      ease: 'power4.out',
-      delay: 0.25,
-    });
+      // Wrap hero subtitle words in inline-block overflow wrappers
+      heroSubTitle.words?.forEach(word => {
+        const wrapper = document.createElement('span');
+        wrapper.className = 'word-wrapper';
+        word.parentNode?.insertBefore(wrapper, word);
+        wrapper.appendChild(word);
+      });
 
-    // Animate hero subtitle words rising from mask
-    gsap.from(heroSubTitle.words, {
-      yPercent: 100,
-      stagger: 0.04,
-      duration: 1.1,
-      ease: 'power3.out',
-      delay: 0.1,
-    });
+      // Animate hero title words rising from mask
+      gsap.from(heroTitle.words, {
+        yPercent: 100,
+        stagger: 0.02,
+        duration: 1.4,
+        ease: 'power4.out',
+        delay: 0.25,
+      });
 
-    // Scroll-driven text character paint highlight reveal with section pinning
-    gsap.fromTo(aboutText.chars, 
-      { color: 'rgba(17, 17, 17, 0.12)' },
-      {
-        color: 'var(--text)',
-        stagger: 0.05,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#about',
-          start: 'top top',
-          end: '+=150%',
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
+      // Animate hero subtitle words rising from mask
+      gsap.from(heroSubTitle.words, {
+        yPercent: 100,
+        stagger: 0.04,
+        duration: 1.1,
+        ease: 'power3.out',
+        delay: 0.1,
+      });
+
+      // Scroll-driven text word paint highlight reveal with section pinning
+      gsap.fromTo(aboutText.words, 
+        { color: 'rgba(17, 17, 17, 0.15)' },
+        {
+          color: 'var(--text)',
+          stagger: 0.08,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#about',
+            start: 'top top',
+            end: '+=150%',
+            scrub: 0.5,
+            pin: true,
+            anticipatePin: 1,
+          }
         }
-      }
-    );
+      );
 
-    // Scroll reveal animation for Contact Title words rising
-    gsap.from(contactTitle.words, {
-      yPercent: 120, // starts slightly lower for extra tracking space
-      stagger: 0.12, // increased stagger to make word reveals distinct
-      duration: 1.8,  // slower animation speed
-      ease: 'power3.out', // smoother deceleration transition
-      scrollTrigger: {
-        trigger: '#contact',
-        start: 'top 85%', // starts a bit later for better focus
-        toggleActions: 'play reverse play reverse' // resets and plays every time it enters the viewport
-      }
+      // Scroll reveal animation for Contact Title words rising
+      gsap.from(contactTitle.words, {
+        yPercent: 120,
+        stagger: 0.12,
+        duration: 1.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#contact',
+          start: 'top 85%',
+          toggleActions: 'play reverse play reverse'
+        }
+      });
     });
 
     // Parallax expand + fade out hero mock browser on scroll
@@ -171,10 +178,11 @@ export default function Home() {
     return () => {
       observer.disconnect();
       clearTimeout(timer);
-      heroTitle.revert();
-      heroSubTitle.revert();
-      aboutText.revert();
-      contactTitle.revert();
+      if (heroTitle) heroTitle.revert();
+      if (heroSubTitle) heroSubTitle.revert();
+      if (aboutText) aboutText.revert();
+      if (contactTitle) contactTitle.revert();
+      ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
 

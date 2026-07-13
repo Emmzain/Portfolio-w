@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const isWorkPage = pathname === '/work';
+  const isProjectPage = pathname?.startsWith('/project/');
   const [bubbleStyle, setBubbleStyle] = useState<React.CSSProperties>({
     width: 0,
     height: 0,
@@ -92,36 +94,57 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Nav Links */}
-        <div 
-          ref={navLinksRef} 
-          className="nav-links desktop-only"
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="nav-bubble-bg" style={bubbleStyle} id="nav-bubble-bg" />
-          <Link href="/#about" className="nav-item" onMouseEnter={handleMouseEnter}>
-            About
-          </Link>
-          <Link href="/work" className="nav-item" onMouseEnter={handleMouseEnter}>
-            Work
-          </Link>
-          <Link href="/#contact" className="nav-item" onMouseEnter={handleMouseEnter}>
-            Contact
-          </Link>
-        </div>
-
-        {/* Hamburger Trigger for Mobile (No background circle) */}
-        <button 
-          className={`mob-menu-btn ${isMobileMenuOpen ? 'active' : ''}`} 
-          onClick={toggleMobileMenu}
-          aria-label="Toggle Mobile Menu"
-        >
-          <div className="hb-lines">
-            <span></span>
-            <span></span>
-            <span></span>
+        {/* Conditional Navigation Links based on page type */}
+        {isWorkPage ? (
+          <div className="nav-links">
+            <Link href="/" className="nav-item" style={{ fontSize: '1.05rem', fontWeight: 600 }}>
+              Home
+            </Link>
           </div>
-        </button>
+        ) : isProjectPage ? (
+          <div className="nav-links">
+            <Link href="/work" className="nav-item" style={{ fontSize: '1.05rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              Back
+            </Link>
+          </div>
+        ) : (
+          <>
+            {/* Desktop Nav Links */}
+            <div 
+              ref={navLinksRef} 
+              className="nav-links desktop-only"
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="nav-bubble-bg" style={bubbleStyle} id="nav-bubble-bg" />
+              <Link href="/#about" className="nav-item" onMouseEnter={handleMouseEnter}>
+                About
+              </Link>
+              <Link href="/work" className="nav-item" onMouseEnter={handleMouseEnter}>
+                Work
+              </Link>
+              <Link href="/#contact" className="nav-item" onMouseEnter={handleMouseEnter}>
+                Contact
+              </Link>
+            </div>
+
+            {/* Hamburger Trigger for Mobile (No background circle) */}
+            <button 
+              className={`mob-menu-btn ${isMobileMenuOpen ? 'active' : ''}`} 
+              onClick={toggleMobileMenu}
+              aria-label="Toggle Mobile Menu"
+            >
+              <div className="hb-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </button>
+          </>
+        )}
       </div>
     </nav>
 

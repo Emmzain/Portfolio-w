@@ -224,6 +224,90 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Services & Capabilities Section */}
+        <section id="services" className="section">
+          <div className="container services-container fade-up">
+            <div className="services-content">
+              <span className="services-pre">How I Help Companies</span>
+              <h2 className="services-title">Solving Complex Problems with Design & Code</h2>
+              <p className="services-desc">
+                I help startups and established brands build memorable digital platforms. By combining clean frontend architecture with intuitive UX/UI design, I deliver websites that convert visitors into customers.
+              </p>
+              <div className="services-list">
+                <div className="service-card">
+                  <h3>UX/UI Design</h3>
+                  <p>User-centered layouts, mockups, and interactive prototypes built for ultimate conversion.</p>
+                </div>
+                <div className="service-card">
+                  <h3>Web Development</h3>
+                  <p>Modern, responsive, fast-loading React and Next.js applications styled with CSS/Tailwind.</p>
+                </div>
+                <div className="service-card">
+                  <h3>Brand Strategy</h3>
+                  <p>Developing unique visual identities, logo marks, and visual systems for modern companies.</p>
+                </div>
+                <div className="service-card">
+                  <h3>Performance & SEO</h3>
+                  <p>Ensuring high Lighthouse scores, search rankings, and fast loading speeds out of the box.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Gallery Section (Full-bleed Diamond Grid with 0 Gap) */}
+        <section id="services-gallery">
+          <div className="diamond-grid">
+            {/* Row 1 */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/desimehfil.vercel.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/shelf Stash web.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Luxin Parlort.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1lumierebeautyui.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Landing pagexl.png')" }}></div></div>
+
+            {/* Row 2 */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Patch Ai p.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Shelf Stash webp.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/app2ult.html.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/appault.html.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme-pi.vercel.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/ddesimehfil.vercel.app.png')" }}></div></div>
+
+            {/* Row 3 */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/dwesi mehfil.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/emmzain.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/lumierebeautyui.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/mierebeautyui.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/patch ai app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/patch ai logapp.png')" }}></div></div>
+
+            {/* Row 4 */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/zain.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/desimehfil.vercel.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/shelf Stash web.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Luxin Parlort.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1lumierebeautyui.netlify.app.png')" }}></div></div>
+
+            {/* Row 5 */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Landing pagexl.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Patch Ai p.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/Shelf Stash webp.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/app2ult.html.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/appault.html.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/biteme-pi.vercel.app.png')" }}></div></div>
+
+            {/* Row 6 */}
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/ddesimehfil.vercel.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/dwesi mehfil.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/emmzain.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/lumierebeautyui.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/mierebeautyui.netlify.app.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/zain.netlify.app.png')" }}></div></div>
+          </div>
+        </section>
+
         {/* Work Section */}
         <section id="work" className="section">
           <div className="container">

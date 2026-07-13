@@ -6,8 +6,6 @@ export default function TrailCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    if (window.innerWidth < 768) return;
-
     const canvas = canvasRef.current;
     if (!canvas) return;
 

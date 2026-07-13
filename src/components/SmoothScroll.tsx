@@ -9,8 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    if (window.innerWidth < 768) return;
-
     // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       duration: 1.5,

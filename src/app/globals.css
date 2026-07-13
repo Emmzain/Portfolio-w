@@ -1280,82 +1280,25 @@ img {
    RESPONSIVE
    ========================================= */
 @media (max-width: 768px) {
-    /* Disable all animations, transitions, and hover transforms on mobile */
-    *, *::before, *::after {
-        animation-delay: 0s !important;
-        animation-duration: 0s !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0s !important;
-        scroll-behavior: auto !important;
-    }
-
-    .fade-up, .slide-up {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-        transition-delay: 0s !important;
-    }
-
-    .btn, .btn-primary, .btn-secondary, .btn::before, .btn-primary::before, .btn-secondary::before {
-        transition: none !important;
-        transform: none !important;
-        box-shadow: none !important;
-    }
-
-    .btn:hover, .btn:active, .btn-primary:hover, .btn-secondary:hover {
-        transform: none !important;
-        box-shadow: none !important;
-    }
-
-    .folder-front, .folder-back, .folder-back::before, .folder-content {
-        transition: none !important;
-        transform: none !important;
-    }
-
-    .folder:hover .folder-front, .folder:focus .folder-front, .folder.open .folder-front {
-        transform: none !important;
-    }
-
-    .file-item, .file-item:nth-child(1), .file-item:nth-child(2) {
-        transition: none !important;
-        transform: none !important;
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        margin-bottom: 0.5rem;
-    }
-
-    .folder:hover .file-item:nth-child(1), .folder.open .file-item:nth-child(1),
-    .folder:hover .file-item:nth-child(2), .folder.open .file-item:nth-child(2) {
-        transform: none !important;
-    }
-
-    .d-tile-inner, .d-tile:hover .d-tile-inner {
-        transform: none !important;
-        transition: none !important;
-    }
-
-    .contact-link, .contact-link::before, .contact-link svg {
-        transition: none !important;
-        transform: none !important;
-    }
-
-    .contact-link:hover, .contact-link:hover::before, .contact-link:hover svg {
-        transform: none !important;
-    }
-
+    /* Keep only text animations disabled on mobile */
     .about-text .char {
         color: var(--text) !important;
         opacity: 1 !important;
         transition: none !important;
     }
 
-    #trail-canvas {
-        display: none !important;
+    :root {
+        --spacing-section: 60px;
     }
 
-    :root {
-        --spacing-section: 150px;
+    #services {
+        padding-bottom: 10px !important;
+    }
+
+    #services-gallery {
+        height: 35vh !important;
+        min-height: 280px !important;
+        margin-top: -20px !important;
     }
 
     .hero-container {

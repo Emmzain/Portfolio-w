@@ -96,6 +96,10 @@ img {
     z-index: 5;
 }
 
+#work.section {
+    padding-bottom: 60px;
+}
+
 .bg-alt {
     /* Optional slight shift if needed, but keeping clean */
 }

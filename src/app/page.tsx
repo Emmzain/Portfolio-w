@@ -351,19 +351,17 @@ export default function Home() {
             <h2 className="section-title fade-up">Selected Work</h2>
             
             <div className="folders-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 340px)', justifyContent: 'center' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem', width: '100%' }}>
-                <ProjectFolder 
-                  folderId="all-projects"
-                  isOpen={openFolder === 'all-projects'}
-                  onToggle={() => handleFolderToggle('all-projects')}
-                  files={[
-                    { id: 'work', title: "Explore All Projects", tabLabel: "PORTFOLIO" }
-                  ]}
-                />
-                <div className="fade-up" style={{ textAlign: 'center', color: 'var(--grey)', fontSize: '0.95rem', fontWeight: 500, fontFamily: 'var(--font-heading)', letterSpacing: '0.01em', marginTop: '0.5rem' }}>
-                  Curious? Double-click or Tap to Open!
-                </div>
-              </div>
+              <ProjectFolder 
+                folderId="all-projects"
+                isOpen={openFolder === 'all-projects'}
+                onToggle={() => handleFolderToggle('all-projects')}
+                files={[
+                  { id: 'work', title: "Explore All Projects", tabLabel: "PORTFOLIO" }
+                ]}
+              />
+              <p className="fade-up" style={{ textAlign: 'center', color: 'var(--grey)', fontSize: '0.95rem', fontWeight: 500, fontFamily: 'var(--font-heading)', letterSpacing: '0.01em', marginTop: '1.25rem' }}>
+                Curious? Double-click or Tap to Open!
+              </p>
             </div>
           </div>
 

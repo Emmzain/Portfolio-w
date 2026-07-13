@@ -9,47 +9,44 @@ interface ProjectDetail {
   year: string;
   problem: string;
   research: string;
+  techStack: string;
+  liveLink: string;
+  githubLink: string;
   coverImg: string;
   wireframeImg: string;
   finalImg: string;
 }
 
 const projects: Record<string, ProjectDetail> = {
-  'shelf-stash': {
-    title: "Shelf Stash",
-    category: "Web & Mobile Bookmarking Platform",
-    client: "Shelf Stash Co",
-    role: "Lead Fullstack Dev & Designer",
-    year: "2026",
-    problem: "Developers and designers struggle to organize code snippets, design assets, and bookmarks. Standard browser bookmarks lack search capabilities, tag matching, and code previews.",
-    research: "Conducted interviews with 20 developers to understand workflow fragmentation. Added live rendering previews, tag matching, and keyboard shortcuts.",
-    coverImg: "/projects/app_shelf_stash.webp",
-    wireframeImg: "/projects/web_shelf_stash.webp",
-    finalImg: "/projects/web_shelf_stash_1.webp"
-  },
-  'patch-ai': {
-    title: "Patch Ai",
-    category: "AI Code Playground & Live Patching",
-    client: "Patch AI Lab",
-    role: "Front-end Architect & UI Designer",
-    year: "2026",
-    problem: "Developers find it tedious to copy-paste AI code suggestions into local files. There was no visual code differential patcher tool running entirely in the browser.",
-    research: "Engineered web-based zip and code saving tools, file differential viewers, and high-fidelity panel states.",
-    coverImg: "/projects/patch_ai.webp",
-    wireframeImg: "/projects/patch_ai_logo.webp",
-    finalImg: "/projects/patch_ai.webp"
-  },
   'desi-mehfil': {
     title: "Desi Mehfil",
     category: "Brand Identity & Gourmet Experience",
     client: "Mehfil Hospitality Group",
-    role: "Creative Director",
+    role: "Creative Director & Frontend Developer",
     year: "2025",
     problem: "A premium culinary restaurant needed complete digital rebranding and interactive menus to stand out from local competitors.",
-    research: "Studied traditional South Asian visual elements and combined them with modern editorial typography layouts.",
+    research: "Studied traditional South Asian visual elements and combined them with modern editorial typography layouts and AOS scrolling hooks.",
+    techStack: "HTML5, CSS3, JavaScript, AOS Animations, Responsive CSS Layouts",
+    liveLink: "https://desimehfil.vercel.app/",
+    githubLink: "https://github.com/Emmzain",
     coverImg: "/projects/desi-mehfil_1.webp",
     wireframeImg: "/projects/desi-mehfil_2.webp",
     finalImg: "/projects/desi-mehfil_3.webp"
+  },
+  'zenith': {
+    title: "Zenith Identity",
+    category: "Corporate Brand Guidelines",
+    client: "Zenith Corp",
+    role: "Graphic Designer & Brand Architect",
+    year: "2025",
+    problem: "Zenith Group needed a visual system and asset pack guidelines to keep their corporate communications unified across multiple digital channels.",
+    research: "Generated clean grid brand books, color architectures, logo constructions, and interactive typography hierarchies.",
+    techStack: "HTML5, CSS3, JavaScript, GSAP, Lenis Smooth Scroll",
+    liveLink: "https://zenithv1.vercel.app/",
+    githubLink: "https://github.com/Emmzain",
+    coverImg: "/projects/zenith.webp",
+    wireframeImg: "/projects/zenith.webp",
+    finalImg: "/projects/zenith.webp"
   },
   'bite-me': {
     title: "Bite Me Fast Food",
@@ -58,7 +55,10 @@ const projects: Record<string, ProjectDetail> = {
     role: "Lead Web Designer",
     year: "2025",
     problem: "A fast-paced gourmet diner required an energetic website layout to boost online deliveries and display their menu.",
-    research: "Applied dynamic hover scales, vibrant palettes, and clean user-focused cart interactions.",
+    research: "Applied dynamic hover scales, vibrant palettes, Splide.js carousel sliders, and clean user-focused cart interactions.",
+    techStack: "HTML5, CSS3, JavaScript, Splide.js, Custom Web Animations",
+    liveLink: "https://biteme-pi.vercel.app/",
+    githubLink: "https://github.com/Emmzain",
     coverImg: "/projects/bite_me_1.webp",
     wireframeImg: "/projects/bite_me_2.webp",
     finalImg: "/projects/bite_me_1.webp"
@@ -70,22 +70,43 @@ const projects: Record<string, ProjectDetail> = {
     role: "UI/UX Designer & Branding Lead",
     year: "2026",
     problem: "A creative agency needed a high-end minimalist web showcase that emphasized photography and visual layouts.",
-    research: "Implemented fullscreen sliders, dynamic grid offsets, and luxury editorial type scales.",
+    research: "Implemented fullscreen sliders, dynamic grid offsets, Netlify deployment hooks, and luxury editorial type scales.",
+    techStack: "HTML5, CSS3, JavaScript, Netlify Deployment, CSS Transitions",
+    liveLink: "https://lumierebeautyui.netlify.app/",
+    githubLink: "https://github.com/Emmzain",
     coverImg: "/projects/lumiere.webp",
     wireframeImg: "/projects/lumiere_2.webp",
     finalImg: "/projects/lumiere_3.webp"
   },
-  'zenith': {
-    title: "Zenith Identity",
-    category: "Corporate Brand Guidelines",
-    client: "Zenith Corp",
-    role: "Graphic Designer & Brand Architect",
-    year: "2025",
-    problem: "Zenith Group needed a visual system and asset pack guidelines to keep their corporate communications unified.",
-    research: "Generated brand books, color architectures, logo constructions, and grid frameworks.",
-    coverImg: "/projects/zenith.webp",
-    wireframeImg: "/projects/zenith.webp",
-    finalImg: "/projects/zenith.webp"
+  'patch-ai': {
+    title: "Patch Ai",
+    category: "AI Code Playground & Live Patching",
+    client: "Patch AI Lab",
+    role: "Front-end Architect & UI Designer",
+    year: "2026",
+    problem: "Developers find it tedious to copy-paste AI code suggestions into local files. There was no visual code differential patcher tool running entirely in the browser.",
+    research: "Engineered web-based zip and code saving tools, file differential viewers, JSZip package compilers, and high-fidelity panel states.",
+    techStack: "HTML5, CSS3, JavaScript, ZipJS, FileSaver.js, JSZip Compilers",
+    liveLink: "https://zainzai.netlify.app/patch%20ai/",
+    githubLink: "https://github.com/Emmzain",
+    coverImg: "/projects/patch_ai.webp",
+    wireframeImg: "/projects/patch_ai_logo.webp",
+    finalImg: "/projects/patch_ai.webp"
+  },
+  'shelf-stash': {
+    title: "Shelf Stash",
+    category: "Web & Mobile Bookmarking Platform",
+    client: "Shelf Stash Co",
+    role: "Lead Fullstack Dev & Designer",
+    year: "2026",
+    problem: "Developers and designers struggle to organize code snippets, design assets, and bookmarks. Standard browser bookmarks lack search capabilities, tag matching, and code previews.",
+    research: "Conducted interviews with 20 developers to understand workflow fragmentation. Added live rendering previews, LocalStorage tag matching, and keyboard shortcuts.",
+    techStack: "HTML5, CSS3, JavaScript, LocalStorage, Custom UI Frameworks",
+    liveLink: "https://stashwebtry.netlify.app/",
+    githubLink: "https://github.com/Emmzain",
+    coverImg: "/projects/app_shelf_stash.webp",
+    wireframeImg: "/projects/web_shelf_stash.webp",
+    finalImg: "/projects/web_shelf_stash_1.webp"
   }
 };
 
@@ -108,6 +129,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     year: "2026",
     problem: "Describe the core problem that this project solves. Keep it minimal and focused on the user's pain points.",
     research: "Outline the steps taken to understand the problem. Mention user interviews or data points that informed direction.",
+    techStack: "HTML5, CSS3, JavaScript",
+    liveLink: "https://github.com/Emmzain",
+    githubLink: "https://github.com/Emmzain",
     coverImg: "/placeholder-cover.webp",
     wireframeImg: "/placeholder-wireframe.webp",
     finalImg: "/placeholder-final.webp"
@@ -133,6 +157,27 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
               <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em' }}>Year</span>
               <span style={{ fontSize: '1.05rem', fontWeight: 500 }}>{project.year}</span>
             </div>
+            <div className="meta-item" style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+              <span className="meta-label" style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--grey)', fontWeight: 600, letterSpacing: '0.05em' }}>Tech Stack</span>
+              <span style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--accent)' }}>{project.techStack}</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '3.5rem' }}>
+            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.8rem 2rem' }}>
+              Live Project
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '8px' }}>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '0.8rem 2rem' }}>
+              GitHub Repo
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ marginLeft: '8px' }}>
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z" />
+              </svg>
+            </a>
           </div>
         </div>
         

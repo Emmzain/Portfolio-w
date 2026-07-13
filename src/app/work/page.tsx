@@ -12,12 +12,12 @@ interface Project {
 }
 
 const projectsList: Project[] = [
-  { id: 'shelf-stash', title: "Shelf Stash", category: 'Web & Mobile Bookmarking Platform', desc: 'A comprehensive developer-focused bookmarking and resource management shelf app.', img: '/projects/app_shelf_stash.webp' },
-  { id: 'patch-ai', title: "Patch Ai", category: 'AI Code Playground & Live Patching', desc: 'An interactive code playground and browser-based AI patching utility.', img: '/projects/patch_ai.webp' },
   { id: 'desi-mehfil', title: "Desi Mehfil", category: 'Brand Identity & Gourmet Experience', desc: 'Complete brand guidelines and digital presence for a premium culinary restaurant.', img: '/projects/desi-mehfil_1.webp' },
+  { id: 'zenith', title: "Zenith Identity", category: 'Corporate Brand Guidelines', desc: 'Corporate brand architecture and identity design package for Zenith Group.', img: '/projects/zenith.webp' },
   { id: 'bite-me', title: "Bite Me Fast Food", category: 'Visual Identity & Digital Menu', desc: 'Creative web presence and branding assets for a fast-paced gourmet diner.', img: '/projects/bite_me_1.webp' },
   { id: 'lumiere', title: "Lumière Studio", category: 'Editorial & Creative Direction', desc: 'High-end visual guidelines and portfolio design for creative agency Lumière.', img: '/projects/lumiere.webp' },
-  { id: 'zenith', title: "Zenith Identity", category: 'Corporate Brand Guidelines', desc: 'Corporate brand architecture and identity design package for Zenith Group.', img: '/projects/zenith.webp' }
+  { id: 'patch-ai', title: "Patch Ai", category: 'AI Code Playground & Live Patching', desc: 'An interactive code playground and browser-based AI patching utility.', img: '/projects/patch_ai.webp' },
+  { id: 'shelf-stash', title: "Shelf Stash", category: 'Web & Mobile Bookmarking Platform', desc: 'A comprehensive developer-focused bookmarking and resource management shelf app.', img: '/projects/app_shelf_stash.webp' }
 ];
 
 export default function WorkPage() {

@@ -1830,7 +1830,7 @@ img {
     #services-gallery .diamond-grid {
         width: 260vw;
         height: 260vh;
-        transform: translate(-50%, -50%) rotate(-45deg); /* Flow changes to top-left -> bottom-right */
+        transform: translate(-50%, -50%) rotate(45deg); /* Flow matches desktop top-left -> bottom-right */
     }
     .services-list {
         grid-template-columns: 1fr;

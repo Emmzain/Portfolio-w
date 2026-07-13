@@ -1300,13 +1300,13 @@ img {
         background-position: center !important;
         background-size: cover !important;
         background-repeat: no-repeat !important;
-        height: 50vh !important;
-        min-height: 320px !important;
+        height: 55vh !important;
+        min-height: 340px !important;
         margin-top: 40px !important; /* Gap between hover cards and picture */
-        border-radius: var(--radius-sm);
-        width: 90% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 
     #services-gallery .diamond-grid {
@@ -1559,22 +1559,22 @@ img {
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        color: #fff;
+        background: var(--white);
+        border: 1px solid rgba(17, 17, 17, 0.12);
+        color: var(--text);
         cursor: pointer;
         z-index: 999;
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
         transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     }
 
     .back-to-top:hover,
     .back-to-top:active {
-        background: rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.95);
         transform: translateY(-3px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
     }
 
     .back-to-top svg {

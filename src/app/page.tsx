@@ -52,90 +52,86 @@ export default function Home() {
       return;
     }
 
-    let heroTitle: SplitType;
-    let heroSubTitle: SplitType;
-    let aboutText: SplitType;
-    let contactTitle: SplitType;
+    // SplitType animations for Hero Title, Subtitle, About Text and Contact Title
+    const heroTitle = new SplitType('.hero-title', { types: 'lines,words' });
+    const heroSubTitle = new SplitType('.hero-sub-title', { types: 'words' });
+    const aboutText = new SplitType('.about-text', { types: 'words' });
+    const contactTitle = new SplitType('.contact-title', { types: 'words' });
 
-    document.fonts.ready.then(() => {
-      // SplitType animations for Hero Title, Subtitle, About Text and Contact Title
-      heroTitle = new SplitType('.hero-title', { types: 'lines,words' });
-      heroSubTitle = new SplitType('.hero-sub-title', { types: 'words' });
-      aboutText = new SplitType('.about-text', { types: 'words' });
-      contactTitle = new SplitType('.contact-title', { types: 'words' });
+    // Wrap contact title words in overflow hidden containers
+    contactTitle.words?.forEach(word => {
+      const wrapper = document.createElement('span');
+      wrapper.className = 'word-wrapper';
+      word.parentNode?.insertBefore(wrapper, word);
+      wrapper.appendChild(word);
+    });
 
-      // Wrap contact title words in overflow hidden containers
-      contactTitle.words?.forEach(word => {
-        const wrapper = document.createElement('span');
-        wrapper.className = 'word-wrapper';
-        word.parentNode?.insertBefore(wrapper, word);
-        wrapper.appendChild(word);
-      });
+    // Wrap hero title lines in overflow hidden containers for clean masking
+    heroTitle.lines?.forEach(line => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'line-wrapper';
+      line.parentNode?.insertBefore(wrapper, line);
+      wrapper.appendChild(line);
+    });
 
-      // Wrap hero title lines in overflow hidden containers for clean masking
-      heroTitle.lines?.forEach(line => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'line-wrapper';
-        line.parentNode?.insertBefore(wrapper, line);
-        wrapper.appendChild(line);
-      });
+    // Wrap hero subtitle words in inline-block overflow wrappers
+    heroSubTitle.words?.forEach(word => {
+      const wrapper = document.createElement('span');
+      wrapper.className = 'word-wrapper';
+      word.parentNode?.insertBefore(wrapper, word);
+      wrapper.appendChild(word);
+    });
 
-      // Wrap hero subtitle words in inline-block overflow wrappers
-      heroSubTitle.words?.forEach(word => {
-        const wrapper = document.createElement('span');
-        wrapper.className = 'word-wrapper';
-        word.parentNode?.insertBefore(wrapper, word);
-        wrapper.appendChild(word);
-      });
+    // Animate hero title words rising from mask
+    gsap.from(heroTitle.words, {
+      yPercent: 100,
+      stagger: 0.02,
+      duration: 1.4,
+      ease: 'power4.out',
+      delay: 0.25,
+    });
 
-      // Animate hero title words rising from mask
-      gsap.from(heroTitle.words, {
-        yPercent: 100,
-        stagger: 0.02,
-        duration: 1.4,
-        ease: 'power4.out',
-        delay: 0.25,
-      });
+    // Animate hero subtitle words rising from mask
+    gsap.from(heroSubTitle.words, {
+      yPercent: 100,
+      stagger: 0.04,
+      duration: 1.1,
+      ease: 'power3.out',
+      delay: 0.1,
+    });
 
-      // Animate hero subtitle words rising from mask
-      gsap.from(heroSubTitle.words, {
-        yPercent: 100,
-        stagger: 0.04,
-        duration: 1.1,
-        ease: 'power3.out',
-        delay: 0.1,
-      });
-
-      // Scroll-driven text word paint highlight reveal with section pinning
-      gsap.fromTo(aboutText.words, 
-        { color: 'rgba(17, 17, 17, 0.15)' },
-        {
-          color: 'var(--text)',
-          stagger: 0.08,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '#about',
-            start: 'top top',
-            end: '+=150%',
-            scrub: 0.5,
-            pin: true,
-            anticipatePin: 1,
-          }
-        }
-      );
-
-      // Scroll reveal animation for Contact Title words rising
-      gsap.from(contactTitle.words, {
-        yPercent: 120,
-        stagger: 0.12,
-        duration: 1.8,
-        ease: 'power3.out',
+    // Scroll-driven text word paint highlight reveal (no pinning to avoid sticky overlapping glitches)
+    gsap.fromTo(aboutText.words, 
+      { color: 'rgba(17, 17, 17, 0.15)' },
+      {
+        color: 'var(--text)',
+        stagger: 0.08,
+        ease: 'none',
         scrollTrigger: {
-          trigger: '#contact',
-          start: 'top 85%',
-          toggleActions: 'play reverse play reverse'
+          trigger: '#about',
+          start: 'top 80%',
+          end: 'bottom 40%',
+          scrub: 0.5,
         }
-      });
+      }
+    );
+
+    // Scroll reveal animation for Contact Title words rising
+    gsap.from(contactTitle.words, {
+      yPercent: 120,
+      stagger: 0.12,
+      duration: 1.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top 85%',
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+
+    // Refresh scroll triggers when fonts are ready to ensure perfect offsets
+    document.fonts.ready.then(() => {
+      ScrollTrigger.refresh();
     });
 
     // Parallax expand + fade out hero mock browser on scroll

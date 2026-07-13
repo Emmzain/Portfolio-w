@@ -1281,6 +1281,7 @@ img {
    ========================================= */
 @media (max-width: 768px) {
     /* Keep only text animations disabled on mobile */
+    .about-text .word,
     .about-text .char {
         color: var(--text) !important;
         opacity: 1 !important;

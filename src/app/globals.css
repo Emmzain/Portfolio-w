@@ -1309,6 +1309,19 @@ img {
         padding-bottom: 20px !important;
     }
 
+    /* Reduce gaps around about text on mobile */
+    .hero {
+        padding-bottom: 20px !important;
+    }
+
+    #about.section {
+        padding: 20px 0 !important;
+    }
+
+    #services.section {
+        padding-top: 30px !important;
+    }
+
     #services-gallery {
         background-image: url('/projects/1999.webp') !important;
         background-position: center !important;

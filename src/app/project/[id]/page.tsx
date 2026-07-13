@@ -189,9 +189,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             alt="Project Cover" 
             className="project-cover" 
             style={{ width: '100%', borderRadius: 'var(--radius)', aspectRatio: '16/9', objectFit: 'cover', border: '1px solid rgba(17,17,17,0.05)' }}
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%221200%22%20height%3D%22600%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20600%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%221200%22%20height%3D%22600%22%20fill%3D%22%23eae5de%22%3E%3C%2Frect%3E%3Ctext%20x%3D%22550%22%20y%3D%22300%22%20fill%3D%22%23999%22%20font-family%3D%22Inter%22%20font-size%3D%2224%22%3ECover%20Image%3C%2Ftext%3E%3C%2Fsvg%3E';
-            }}
           />
         </div>
       </section>
@@ -221,9 +218,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             alt="Wireframe" 
             className="content-image fade-up visible" 
             style={{ width: '100%', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid rgba(17,17,17,0.06)' }}
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%221200%22%20height%3D%22800%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22%23f5f5f5%22%3E%3C%2Frect%3E%3Ctext%20x%3D%22520%22%20y%3D%22400%22%20fill%3D%22%23999%22%20font-family%3D%22Inter%22%20font-size%3D%2224%22%3EWireframe%20Screenshots%3C%2Ftext%3E%3C%2Fsvg%3E';
-            }}
           />
         </div>
       </section>
@@ -239,9 +233,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             alt="Final Design" 
             className="content-image fade-up visible" 
             style={{ width: '100%', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid rgba(17,17,17,0.06)' }}
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%221200%22%20height%3D%22800%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20800%22%20preserveAspectRatio%3D%22none%22%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22%23eae5de%22%3E%3C%2Frect%3E%3Ctext%20x%3D%22520%22%20y%3D%22400%22%20fill%3D%22%23999%22%20font-family%3D%22Inter%22%20font-size%3D%2224%22%3EFinal%20Design%20Screenshots%3C%2Ftext%3E%3C%2Fsvg%3E';
-            }}
           />
         </div>
       </section>

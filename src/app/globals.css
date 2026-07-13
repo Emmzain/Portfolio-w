@@ -1796,7 +1796,6 @@ img {
     z-index: 2;
 }
 
-/* Keep background images in the flow of the rotated diamond */
 .d-tile-inner {
     position: absolute;
     width: 100%;
@@ -1809,10 +1808,11 @@ img {
     justify-content: center;
     text-align: center;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: rotate(-45deg) scale(1.42);
 }
 
 .d-tile:hover .d-tile-inner {
-    transform: scale(1.08);
+    transform: rotate(-45deg) scale(1.55);
 }
 
 /* Responsive adjustments for services section */

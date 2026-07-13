@@ -300,37 +300,37 @@ export default function Home() {
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
 
-            {/* Row 3 (Center priority) */}
+            {/* Row 3 */}
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/9.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/10.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/13.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/10.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/13.png')" }}></div></div>
 
-            {/* Row 4 (Center priority) */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/13.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
+            {/* Row 4 */}
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/9.png')" }}></div></div>
 
             {/* Row 5 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/9.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/10.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/13.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/2.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/3.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
 
             {/* Row 6 */}
-            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/6.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/7.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/8.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/9.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/10.png')" }}></div></div>
             <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/13.png')" }}></div></div>
+            <div className="d-tile"><div className="d-tile-inner" style={{ backgroundImage: "url('/projects/1.png')" }}></div></div>
           </div>
         </section>
 

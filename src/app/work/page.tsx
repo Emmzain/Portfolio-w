@@ -12,12 +12,12 @@ interface Project {
 }
 
 const projectsList: Project[] = [
-  { id: 'bella', title: "Bella's Restaurant", category: 'Brand Identity & Web Design', desc: 'A modern design and development project creating a unique identity.', img: '/projects/6.webp' },
-  { id: 'pizza', title: "Pizza House", category: 'App Development', desc: 'An intuitive, fast mobile app built for seamless pizza ordering.', img: '/projects/2.webp' },
-  { id: 'landing', title: "SaaS Landing Page", category: 'Conversion Optimization', desc: 'High-performance landing page design optimized for conversion rate.', img: '/projects/1.webp' },
-  { id: 'ai', title: "AI Studio", category: 'Web Application', desc: 'A sophisticated dashboard and web application for AI analytics.', img: '/projects/3.webp' },
-  { id: 'portfolio', title: "Previous Portfolio", category: 'Web Design', desc: 'A clean, typography-driven portfolio website exploring layout space.', img: '/projects/9.webp' },
-  { id: 'branding', title: "Personal Branding", category: 'Brand Guidelines', desc: 'Visual identity research, logo systems, and brand consultation.', img: '/projects/8.webp' }
+  { id: 'shelf-stash', title: "Shelf Stash", category: 'Web & Mobile Bookmarking Platform', desc: 'A comprehensive developer-focused bookmarking and resource management shelf app.', img: '/projects/app_shelf_stash.webp' },
+  { id: 'patch-ai', title: "Patch Ai", category: 'AI Code Playground & Live Patching', desc: 'An interactive code playground and browser-based AI patching utility.', img: '/projects/patch_ai.webp' },
+  { id: 'desi-mehfil', title: "Desi Mehfil", category: 'Brand Identity & Gourmet Experience', desc: 'Complete brand guidelines and digital presence for a premium culinary restaurant.', img: '/projects/desi-mehfil_1.webp' },
+  { id: 'bite-me', title: "Bite Me Fast Food", category: 'Visual Identity & Digital Menu', desc: 'Creative web presence and branding assets for a fast-paced gourmet diner.', img: '/projects/bite_me_1.webp' },
+  { id: 'lumiere', title: "Lumière Studio", category: 'Editorial & Creative Direction', desc: 'High-end visual guidelines and portfolio design for creative agency Lumière.', img: '/projects/lumiere.webp' },
+  { id: 'zenith', title: "Zenith Identity", category: 'Corporate Brand Guidelines', desc: 'Corporate brand architecture and identity design package for Zenith Group.', img: '/projects/zenith.webp' }
 ];
 
 export default function WorkPage() {

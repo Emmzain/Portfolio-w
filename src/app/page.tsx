@@ -344,7 +344,7 @@ export default function Home() {
           <div className="container">
             <h2 className="section-title fade-up">Selected Work</h2>
             
-            <div className="folders-grid" style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="folders-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 340px)', justifyContent: 'center' }}>
               <ProjectFolder 
                 folderId="all-projects"
                 isOpen={openFolder === 'all-projects'}

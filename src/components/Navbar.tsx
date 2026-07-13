@@ -94,63 +94,59 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Conditional Navigation Links based on page type */}
-        {isWorkPage ? (
-          <div className="nav-links">
-            <Link href="/" className="nav-item" style={{ fontSize: '1.05rem', fontWeight: 600 }}>
+        {/* Desktop Nav Links */}
+        <div 
+          ref={navLinksRef} 
+          className="nav-links desktop-only"
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="nav-bubble-bg" style={bubbleStyle} id="nav-bubble-bg" />
+          
+          {/* Conditional Prepended Link */}
+          {isWorkPage && (
+            <Link href="/" className="nav-item" onMouseEnter={handleMouseEnter} style={{ fontWeight: 600 }}>
               Home
             </Link>
-          </div>
-        ) : isProjectPage ? (
-          <div className="nav-links">
-            <Link href="/work" className="nav-item" style={{ fontSize: '1.05rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          )}
+          {isProjectPage && (
+            <Link href="/work" className="nav-item" onMouseEnter={handleMouseEnter} style={{ fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="19" y1="12" x2="5" y2="12"></line>
                 <polyline points="12 19 5 12 12 5"></polyline>
               </svg>
               Back
             </Link>
-          </div>
-        ) : (
-          <>
-            {/* Desktop Nav Links */}
-            <div 
-              ref={navLinksRef} 
-              className="nav-links desktop-only"
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="nav-bubble-bg" style={bubbleStyle} id="nav-bubble-bg" />
-              <Link href="/#about" className="nav-item" onMouseEnter={handleMouseEnter}>
-                About
-              </Link>
-              <Link href="/work" className="nav-item" onMouseEnter={handleMouseEnter}>
-                Work
-              </Link>
-              <Link href="/#contact" className="nav-item" onMouseEnter={handleMouseEnter}>
-                Contact
-              </Link>
-            </div>
+          )}
 
-            {/* Hamburger Trigger for Mobile (No background circle) */}
-            <button 
-              className={`mob-menu-btn ${isMobileMenuOpen ? 'active' : ''}`} 
-              onClick={toggleMobileMenu}
-              aria-label="Toggle Mobile Menu"
-            >
-              <div className="hb-lines">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </button>
-          </>
-        )}
+          <Link href="/#about" className="nav-item" onMouseEnter={handleMouseEnter}>
+            About
+          </Link>
+          <Link href="/work" className="nav-item" onMouseEnter={handleMouseEnter}>
+            Work
+          </Link>
+          <Link href="/#contact" className="nav-item" onMouseEnter={handleMouseEnter}>
+            Contact
+          </Link>
+        </div>
+
+        {/* Hamburger Trigger for Mobile */}
+        <button 
+          className={`mob-menu-btn ${isMobileMenuOpen ? 'active' : ''}`} 
+          onClick={toggleMobileMenu}
+          aria-label="Toggle Mobile Menu"
+        >
+          <div className="hb-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
       </div>
     </nav>
 
     {/* Full Screen Mobile Overlay Menu */}
     <div className={`mob-overlay-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-      {/* Close button X (No background circle, clean) */}
+      {/* Close button X */}
       <button className="mob-menu-close-btn" onClick={closeMobileMenu} aria-label="Close Menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="18" y1="6" x2="6" y2="18" />
@@ -159,6 +155,22 @@ export default function Navbar() {
       </button>
 
       <div className="mob-overlay-content">
+        {/* Conditional Prepended Link */}
+        {isWorkPage && (
+          <Link href="/" className="mob-nav-item" onClick={closeMobileMenu} style={{ fontWeight: 600 }}>
+            Home
+          </Link>
+        )}
+        {isProjectPage && (
+          <Link href="/work" className="mob-nav-item" onClick={closeMobileMenu} style={{ fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back
+          </Link>
+        )}
+
         <Link href="/#about" className="mob-nav-item" onClick={closeMobileMenu}>
           About
         </Link>

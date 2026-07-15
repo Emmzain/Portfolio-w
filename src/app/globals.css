@@ -707,7 +707,7 @@ img {
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: var(--bg);
+    background-color: transparent;
     position: relative;
     z-index: 10;
 }

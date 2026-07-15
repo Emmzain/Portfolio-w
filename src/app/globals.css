@@ -1314,6 +1314,10 @@ img {
         padding-bottom: 20px !important;
     }
 
+    #about {
+        height: 400px !important;
+    }
+
     #about.section {
         padding: 20px 0 !important;
     }

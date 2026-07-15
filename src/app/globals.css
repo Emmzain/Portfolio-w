@@ -1314,6 +1314,14 @@ img {
         padding-bottom: 20px !important;
     }
 
+    #hero {
+        min-height: 80vh !important;
+    }
+
+    #about {
+        height: 400px !important;
+    }
+
     #about.section {
         padding: 20px 0 !important;
     }

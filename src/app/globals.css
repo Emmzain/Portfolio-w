@@ -1316,6 +1316,8 @@ img {
 
     #about {
         height: 400px !important;
+        align-items: flex-start !important;
+        padding-top: 60px !important;
     }
 
     #about.section {

@@ -17,17 +17,17 @@ const projectsList: Project[] = [
   { 
     id: 'desi-mehfil', 
     title: "Desi Mehfil", 
-    category: 'Brand Identity & Gourmet Experience', 
-    desc: 'Complete brand guidelines and digital presence for a premium culinary restaurant.', 
+    category: 'Restaurant', 
+    desc: 'Complete brand guidelines and digital presence for a premium Pakistani Cuisine restaurant.', 
     img: '/projects/desi-mehfil_1.webp',
     liveLink: "https://desimehfil.vercel.app/",
     githubLink: "https://github.com/Emmzain"
   },
   { 
     id: 'zenith', 
-    title: "Zenith Identity", 
-    category: 'Corporate Brand Guidelines', 
-    desc: 'Corporate brand architecture and identity design package for Zenith Group.', 
+    title: " Zenith Studio", 
+    category: 'Landing Page', 
+    desc: 'Corporate brand architecture and identity design package for Zenith Studio.', 
     img: '/projects/zenith.webp',
     liveLink: "https://zenithv1.vercel.app/",
     githubLink: "https://github.com/Emmzain"
@@ -35,8 +35,8 @@ const projectsList: Project[] = [
   { 
     id: 'bite-me', 
     title: "Bite Me Fast Food", 
-    category: 'Visual Identity & Digital Menu', 
-    desc: 'Creative web presence and branding assets for a fast-paced gourmet diner.', 
+    category: 'Restaurant', 
+    desc: ' Modern, single-page progressive web application (PWA) built for a premium burger joint..', 
     img: '/projects/bite_me_1.webp',
     liveLink: "https://biteme-pi.vercel.app/",
     githubLink: "https://github.com/Emmzain"
@@ -44,8 +44,8 @@ const projectsList: Project[] = [
   { 
     id: 'lumiere', 
     title: "Lumière Studio", 
-    category: 'Editorial & Creative Direction', 
-    desc: 'High-end visual guidelines and portfolio design for creative agency Lumière.', 
+    category: 'E-store / Spotify Style', 
+    desc: 'Premium, fully responsive, and visually engaginge-commerce landing page interface. Built with React and Vite.', 
     img: '/projects/lumiere.webp',
     liveLink: "https://lumierebeautyui.netlify.app/",
     githubLink: "https://github.com/Emmzain"
@@ -53,7 +53,7 @@ const projectsList: Project[] = [
   { 
     id: 'patch-ai', 
     title: "Patch Ai", 
-    category: 'AI Code Playground & Live Patching', 
+    category: 'AI Code Playground & Live Fixing', 
     desc: 'An interactive code playground and browser-based AI patching utility.', 
     img: '/projects/patch_ai.webp',
     liveLink: "https://zainzai.netlify.app/patch%20ai/",
@@ -62,8 +62,8 @@ const projectsList: Project[] = [
   { 
     id: 'shelf-stash', 
     title: "Shelf Stash", 
-    category: 'Web & Mobile Bookmarking Platform', 
-    desc: 'A comprehensive developer-focused bookmarking and resource management shelf app.', 
+    category: 'Web & Mobile App ', 
+    desc: 'A comprehensive developer-focused Bookmarking Platform and resource management shelf app.', 
     img: '/projects/app_shelf_stash.webp',
     liveLink: "https://stashwebtry.netlify.app/",
     githubLink: "https://github.com/Emmzain"

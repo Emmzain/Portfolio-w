@@ -134,6 +134,71 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
+function renderFormattedText(text: string) {
+  const keywords = [
+    'Next.js 16 (App Router)',
+    'Next.js 16',
+    'Next.js',
+    'Tailwind CSS v4',
+    'Tailwind CSS',
+    'Tailwind',
+    'PWA',
+    'Progressive Web Application (PWA)',
+    'Progressive Web Application',
+    'Bun runtime',
+    'Bun',
+    'TypeScript 5',
+    'TypeScript',
+    'Supabase Client',
+    'Supabase',
+    'GSAP ScrollTriggers',
+    'GSAP scroll-triggered animations',
+    'GSAP',
+    'Lenis smooth scrolling',
+    'Lenis',
+    'Framer Motion',
+    'WhatsApp order checkout',
+    'WhatsApp message dispatchers',
+    'WhatsApp message generators',
+    'WhatsApp',
+    'Admin Management Dashboard',
+    'Admin Portal Authentication',
+    'Admin Portal',
+    'Admin Dashboard',
+    'React',
+    'Vite',
+    'HTML5',
+    'CSS3',
+    'JavaScript',
+    'AOS Animations',
+    'Splide.js',
+    'Netlify',
+    'JSZip',
+    'FileSaver.js',
+    'LocalStorage'
+  ];
+
+  keywords.sort((a, b) => b.length - a.length);
+
+  const pattern = new RegExp(`(${keywords.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+  const parts = text.split(pattern);
+
+  return (
+    <>
+      {parts.map((part, i) => {
+        const isMatch = keywords.some(k => k.toLowerCase() === part.toLowerCase());
+        return isMatch ? (
+          <strong key={i} style={{ color: 'var(--text)', fontWeight: 650 }}>
+            {part}
+          </strong>
+        ) : (
+          part
+        );
+      })}
+    </>
+  );
+}
+
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const project = projects[id] || {
@@ -206,12 +271,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
           <div className="content-block fade-up visible">
             <h2 style={{ fontSize: '1.75rem', fontWeight: 600, marginBottom: '1rem' }}>The Challenge</h2>
-            <p style={{ color: 'var(--grey)', lineHeight: 1.65, fontSize: '1.05rem' }}>{project.problem}</p>
+            <p style={{ color: 'var(--grey)', lineHeight: 1.65, fontSize: '1.05rem' }}>{renderFormattedText(project.problem)}</p>
           </div>
           
           <div className="content-block fade-up visible">
             <h2 style={{ fontSize: '1.75rem', fontWeight: 600, marginBottom: '1rem' }}>Research & Strategy</h2>
-            <p style={{ color: 'var(--grey)', lineHeight: 1.65, fontSize: '1.05rem' }}>{project.research}</p>
+            <p style={{ color: 'var(--grey)', lineHeight: 1.65, fontSize: '1.05rem' }}>{renderFormattedText(project.research)}</p>
           </div>
         </div>
       </section>

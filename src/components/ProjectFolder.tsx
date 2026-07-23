@@ -14,9 +14,12 @@ interface ProjectFolderProps {
   files: FileItem[];
   isOpen: boolean;
   onToggle: () => void;
+  folderName?: string;
 }
 
-export default function ProjectFolder({ folderId, files, isOpen, onToggle }: ProjectFolderProps) {
+export default function ProjectFolder({ folderId, files, isOpen, onToggle, folderName }: ProjectFolderProps) {
+  const labelText = folderName || files[0]?.tabLabel || 'Work';
+
   return (
     <div className="folder-wrapper fade-up" data-folder={folderId}>
       <div 
@@ -35,7 +38,9 @@ export default function ProjectFolder({ folderId, files, isOpen, onToggle }: Pro
           }
         }}
       >
-        <div className="folder-back" />
+        <div className="folder-back">
+          <span className="folder-back-tab-label">{labelText}</span>
+        </div>
         
         <div className="folder-content">
           {files.map((file, index) => (
@@ -53,6 +58,10 @@ export default function ProjectFolder({ folderId, files, isOpen, onToggle }: Pro
             <div className="logo-crop-wrapper">
               <img src="/Logo.webp" className="ez-folder-logo" alt="EZ Logo" />
             </div>
+          </div>
+          <div className="folder-front-badge">
+            <span className="badge-dot" />
+            {labelText}
           </div>
         </div>
       </div>

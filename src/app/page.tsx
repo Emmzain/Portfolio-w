@@ -353,6 +353,7 @@ export default function Home() {
             <div className="folders-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 320px))', gap: '2.5rem', justifyContent: 'center' }}>
               <ProjectFolder 
                 folderId="portfolio-folder"
+                folderName="Portfolio Work"
                 isOpen={openFolder === 'portfolio-folder'}
                 onToggle={() => handleFolderToggle('portfolio-folder', '/work?category=portfolio')}
                 files={[
@@ -361,6 +362,7 @@ export default function Home() {
               />
               <ProjectFolder 
                 folderId="client-folder"
+                folderName="Client Work"
                 isOpen={openFolder === 'client-folder'}
                 onToggle={() => handleFolderToggle('client-folder', '/work?category=client')}
                 files={[

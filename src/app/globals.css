@@ -877,6 +877,46 @@ img {
     backface-visibility: hidden;
 }
 
+.folder-back-tab-label {
+    position: absolute;
+    top: -14%;
+    left: 4%;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(17, 17, 17, 0.6);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.folder-front-badge {
+    position: absolute;
+    bottom: 1.15rem;
+    background: rgba(17, 17, 17, 0.06);
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    padding: 0.35rem 0.95rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.folder-front-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
+
 .folder-name {
     font-family: var(--font-heading);
     font-weight: 500;

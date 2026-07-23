@@ -15,6 +15,10 @@ interface ProjectDetail {
   coverImg: string;
   wireframeImg: string;
   finalImg: string;
+  wireframeTitle?: string;
+  wireframeDesc?: string;
+  finalTitle?: string;
+  finalDesc?: string;
 }
 
 const projects: Record<string, ProjectDetail> = {
@@ -31,7 +35,11 @@ const projects: Record<string, ProjectDetail> = {
     githubLink: "",
     coverImg: "/projects/royal_chef_wireframe.webp",
     wireframeImg: "/projects/royal_chef_cover.webp",
-    finalImg: "/projects/royal_chef_final.webp"
+    finalImg: "/projects/royal_chef_final.webp",
+    wireframeTitle: "Admin Portal Authentication & Security System",
+    wireframeDesc: "Protected Admin Authentication Portal (/admin/login) equipped with session persistence (localStorage), auth state context providers, system checksum verification utilities for token validation, and secure environment variable fallback configurations (.env.local).",
+    finalTitle: "Admin Management Dashboard & Supabase Database",
+    finalDesc: "Protected Management Dashboard (/dashboard) powered by Supabase client backend. Features real-time menu catalog management, active category controls, live item counters (Total Items, Categories, Average Prices), and instant WhatsApp reservation & order dispatches."
   },
   'desi-mehfil': {
     title: "Desi Mehfil",
@@ -149,7 +157,9 @@ function renderFormattedText(text: string) {
     'Bun',
     'TypeScript 5',
     'TypeScript',
+    'Supabase client backend',
     'Supabase Client',
+    'Supabase database',
     'Supabase',
     'GSAP ScrollTriggers',
     'GSAP scroll-triggered animations',
@@ -160,11 +170,18 @@ function renderFormattedText(text: string) {
     'WhatsApp order checkout',
     'WhatsApp message dispatchers',
     'WhatsApp message generators',
+    'WhatsApp reservation & order dispatches',
     'WhatsApp',
-    'Admin Management Dashboard',
+    'Admin Portal Authentication & Security System',
     'Admin Portal Authentication',
+    'Admin Management Dashboard & Supabase Database',
+    'Admin Management Dashboard',
     'Admin Portal',
     'Admin Dashboard',
+    '/admin/login',
+    '/dashboard',
+    '.env.local',
+    'localStorage',
     'React',
     'Vite',
     'HTML5',
@@ -174,8 +191,7 @@ function renderFormattedText(text: string) {
     'Splide.js',
     'Netlify',
     'JSZip',
-    'FileSaver.js',
-    'LocalStorage'
+    'FileSaver.js'
   ];
 
   keywords.sort((a, b) => b.length - a.length);
@@ -284,8 +300,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       <section className="section" style={{ padding: '8rem 0' }}>
         <div className="container">
           <div className="content-block fade-up visible" style={{ maxWidth: '700px', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>Wireframes & Prototyping</h2>
-            <p style={{ color: 'var(--grey)', lineHeight: 1.6, fontSize: '1.05rem' }}>Low-fidelity explorations and layouts mapping out structural and user flows before establishing high-fidelity components.</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>{project.wireframeTitle || "Wireframes & Prototyping"}</h2>
+            <p style={{ color: 'var(--grey)', lineHeight: 1.6, fontSize: '1.05rem' }}>{renderFormattedText(project.wireframeDesc || "Low-fidelity explorations and layouts mapping out structural and user flows before establishing high-fidelity components.")}</p>
           </div>
           <img 
             src={project.wireframeImg} 
@@ -299,8 +315,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       <section className="section bg-alt" style={{ padding: '8rem 0', background: 'rgba(17,17,17,0.02)' }}>
         <div className="container">
           <div className="content-block fade-up visible" style={{ maxWidth: '700px', marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>Final Interface Design</h2>
-            <p style={{ color: 'var(--grey)', lineHeight: 1.6, fontSize: '1.05rem' }}>Polished high-fidelity mockups focusing on typography, layout space, color accents, and modern digital interfaces.</p>
+            <h2 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>{project.finalTitle || "Final Interface Design"}</h2>
+            <p style={{ color: 'var(--grey)', lineHeight: 1.6, fontSize: '1.05rem' }}>{renderFormattedText(project.finalDesc || "Polished high-fidelity mockups focusing on typography, layout space, color accents, and modern digital interfaces.")}</p>
           </div>
           <img 
             src={project.finalImg} 

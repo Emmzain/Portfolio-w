@@ -29,9 +29,9 @@ const projects: Record<string, ProjectDetail> = {
     techStack: "Next.js 16, TypeScript 5, Bun, Tailwind CSS v4, Framer Motion, GSAP, Lenis, Supabase, Lucide React",
     liveLink: "https://royalchef.vercel.app/",
     githubLink: "",
-    coverImg: "/projects/royal_chef_1.webp",
-    wireframeImg: "/projects/royal_chef_2.webp",
-    finalImg: "/projects/royal_chef_3.webp"
+    coverImg: "/projects/royal_chef_cover.webp",
+    wireframeImg: "/projects/royal_chef_wireframe.webp",
+    finalImg: "/projects/royal_chef_final.webp"
   },
   'desi-mehfil': {
     title: "Desi Mehfil",
@@ -197,7 +197,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             src={project.coverImg} 
             alt="Project Cover" 
             className="project-cover" 
-            style={{ width: '100%', borderRadius: 'var(--radius)', aspectRatio: '16/9', objectFit: 'cover', border: '1px solid rgba(17,17,17,0.05)' }}
+            style={{ width: '100%', borderRadius: 'var(--radius)', aspectRatio: '16/9', maxHeight: '550px', objectFit: 'cover', objectPosition: 'top', border: '1px solid rgba(17,17,17,0.05)' }}
           />
         </div>
       </section>
@@ -226,7 +226,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             src={project.wireframeImg} 
             alt="Wireframe" 
             className="content-image fade-up visible" 
-            style={{ width: '100%', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid rgba(17,17,17,0.06)' }}
+            style={{ width: '100%', borderRadius: 'var(--radius-sm)', aspectRatio: '16/9', maxHeight: '550px', objectFit: 'cover', objectPosition: 'top', border: '1px solid rgba(17,17,17,0.06)' }}
           />
         </div>
       </section>
@@ -241,7 +241,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             src={project.finalImg} 
             alt="Final Design" 
             className="content-image fade-up visible" 
-            style={{ width: '100%', borderRadius: 'var(--radius-sm)', objectFit: 'cover', border: '1px solid rgba(17,17,17,0.06)' }}
+            style={{ width: '100%', borderRadius: 'var(--radius-sm)', aspectRatio: '16/9', maxHeight: '550px', objectFit: 'cover', objectPosition: 'top', border: '1px solid rgba(17,17,17,0.06)' }}
           />
         </div>
       </section>

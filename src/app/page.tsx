@@ -184,11 +184,11 @@ export default function Home() {
     };
   }, []);
 
-  const handleFolderToggle = (folderId: string) => {
+  const handleFolderToggle = (folderId: string, targetPath: string = '/work') => {
     setOpenFolder(folderId);
-    // Animate opening state briefly then redirect to /work page
+    // Animate opening state briefly then redirect to target page
     setTimeout(() => {
-      router.push('/work');
+      router.push(targetPath);
     }, 450);
   };
 
@@ -350,19 +350,27 @@ export default function Home() {
           <div className="container">
             <h2 className="section-title fade-up">Selected Work</h2>
             
-            <div className="folders-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 340px)', justifyContent: 'center' }}>
+            <div className="folders-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 320px))', gap: '2.5rem', justifyContent: 'center' }}>
               <ProjectFolder 
-                folderId="all-projects"
-                isOpen={openFolder === 'all-projects'}
-                onToggle={() => handleFolderToggle('all-projects')}
+                folderId="portfolio-folder"
+                isOpen={openFolder === 'portfolio-folder'}
+                onToggle={() => handleFolderToggle('portfolio-folder', '/work?category=portfolio')}
                 files={[
-                  { id: 'work', title: "Explore All Projects", tabLabel: "PORTFOLIO" }
+                  { id: 'work?category=portfolio', title: "Explore Portfolio Work", tabLabel: "PORTFOLIO" }
                 ]}
               />
-              <p className="fade-up" style={{ textAlign: 'center', color: 'var(--grey)', fontSize: '0.95rem', fontWeight: 500, fontFamily: 'var(--font-heading)', letterSpacing: '0.01em', marginTop: '1.25rem' }}>
-                Curious? Double-click or Tap to Open!
-              </p>
+              <ProjectFolder 
+                folderId="client-folder"
+                isOpen={openFolder === 'client-folder'}
+                onToggle={() => handleFolderToggle('client-folder', '/work?category=client')}
+                files={[
+                  { id: 'project/royal-chef', title: "Royal Chef Haripur PWA", tabLabel: "CLIENT WORK" }
+                ]}
+              />
             </div>
+            <p className="fade-up" style={{ textAlign: 'center', color: 'var(--grey)', fontSize: '0.95rem', fontWeight: 500, fontFamily: 'var(--font-heading)', letterSpacing: '0.01em', marginTop: '2rem' }}>
+              Curious? Double-click or Tap a folder to open!
+            </p>
           </div>
 
           {/* Gallery Overlay */}

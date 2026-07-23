@@ -877,19 +877,6 @@ img {
     backface-visibility: hidden;
 }
 
-.folder-back-tab-label {
-    position: absolute;
-    top: -14%;
-    left: 4%;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(17, 17, 17, 0.6);
-    z-index: 1;
-    pointer-events: none;
-}
-
 .folder-front-badge {
     display: none;
 }

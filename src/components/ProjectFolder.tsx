@@ -38,9 +38,7 @@ export default function ProjectFolder({ folderId, files, isOpen, onToggle, folde
           }
         }}
       >
-        <div className="folder-back">
-          <span className="folder-back-tab-label">{labelText}</span>
-        </div>
+        <div className="folder-back" />
         
         <div className="folder-content">
           {files.map((file, index) => (

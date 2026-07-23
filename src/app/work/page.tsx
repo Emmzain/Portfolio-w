@@ -22,7 +22,7 @@ const projectsList: Project[] = [
     category: 'Client Work — Fast Food & Chinese PWA', 
     categoryType: 'client',
     desc: 'Modern, high-performance Progressive Web Application (PWA) built for Royal Chef featuring live cart, WhatsApp checkout, interactive menu, and protected admin portal.', 
-    img: '/projects/royal_chef_cover.webp',
+    img: '/projects/royal_chef_wireframe.webp',
     liveLink: "https://royalchef.vercel.app/",
     githubLink: ""
   },

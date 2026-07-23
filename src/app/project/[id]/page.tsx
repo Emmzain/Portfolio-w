@@ -29,8 +29,8 @@ const projects: Record<string, ProjectDetail> = {
     techStack: "Next.js 16, TypeScript 5, Bun, Tailwind CSS v4, Framer Motion, GSAP, Lenis, Supabase, Lucide React",
     liveLink: "https://royalchef.vercel.app/",
     githubLink: "",
-    coverImg: "/projects/royal_chef_cover.webp",
-    wireframeImg: "/projects/royal_chef_wireframe.webp",
+    coverImg: "/projects/royal_chef_wireframe.webp",
+    wireframeImg: "/projects/royal_chef_cover.webp",
     finalImg: "/projects/royal_chef_final.webp"
   },
   'desi-mehfil': {
